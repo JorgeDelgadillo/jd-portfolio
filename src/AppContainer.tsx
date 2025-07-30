@@ -1,24 +1,14 @@
-import './App.css'
 import { useTheme } from './ThemeContext'
 import App from './App'
+import "./AppContainer.scss";
 
 function AppContainer() {
   const { darkMode, toggleDarkMode } = useTheme();
 
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        width: '100vw',
-        background: darkMode ? '#18181b' : '#fff',
-        color: darkMode ? '#fff' : '#18181b',
-        transition: 'background 0.3s, color 0.3s',
-        position: 'relative',
-        overflow: 'hidden',
-      }}
-    >
+    <div className={`app-container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
       <button
-        className="absolute top-4 right-4"
+        className="theme-toggle-button"
         onClick={toggleDarkMode}
       >
         {darkMode ? '🌙 Dark Mode' : '☀️ Light Mode'}
