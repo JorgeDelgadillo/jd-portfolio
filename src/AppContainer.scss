@@ -1,0 +1,70 @@
+// Global styles and color variables
+
+// Base color palette
+$night: #00120bff;
+$dark-slate-gray: #35605aff;
+$slate-gray: #6b818cff;
+$lavender-web: #d8e4ffff;
+$spring-green: #31e981ff;
+$white: #ffffff;
+$black: #000000;
+$light-gray: #f0f0f0;
+$medium-gray: #cccccc;
+$lighter-gray: #e0e0e0;
+$light-green: #a0e0a0;
+$blue: #007bff;
+
+// Default theme colors
+$primary-color: $night;
+$secondary-color: $dark-slate-gray;
+$accent-color: $slate-gray;
+$background-color: $lavender-web;
+$highlight-color: $spring-green;
+
+:root {
+  font-family: 'Arial', sans-serif;
+}
+
+// Dark Mode Theme Variables
+.dark-mode {
+  --primary-color: #{$night};
+  --secondary-color: #{$dark-slate-gray};
+  --accent-color: #{$slate-gray};
+  --background-color: #{$night};
+  --highlight-color: #{$spring-green};
+  --text-color: #{$white};
+  --link-color: #{$spring-green};
+  --border-color: #{$slate-gray};
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+// Light Mode Theme Variables
+.light-mode {
+  --primary-color: #{$white};
+  --secondary-color: #{$light-gray};
+  --accent-color: #{$medium-gray};
+  --background-color: #{$lighter-gray};
+  --highlight-color: #{$light-green};
+  --text-color: #{$black};
+  --link-color: #{$blue};
+  --border-color: #{$medium-gray};
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+// Container styles
+.app-container {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--background-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+// Theme toggle button
+.theme-toggle-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
