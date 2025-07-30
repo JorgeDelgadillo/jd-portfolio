@@ -1,15 +1,135 @@
-# React + TypeScript + Vite
+# JD Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern portfolio built with React, TypeScript, and Vite, featuring Tailwind CSS for styling.
 
-Currently, two official plugins are available:
+## 🚀 Quick Start  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚢 Production Deployment
 
-## Expanding the ESLint configuration
+### Docker Image for Production
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+For production deployment, you might want to create a multi-stage Docker build:
+
+1. **Build the application:**
+   ```bash
+   docker build -t jd-portfolio:production .
+   ```
+
+2. **Deploy to your preferred platform:**
+   - Docker Hub
+   - AWS ECS/EKS
+   - Google Cloud Run
+   - DigitalOcean App Platform
+   - Any Docker-compatible hosting service
+
+### Environment Variables
+
+The application runs on port 5173 by default. You can modify the `docker-compose.yml` or Dockerfile to change ports as needed for your deployment environment.
+
+## 📝 License
+
+This project is private and proprietary.- Docker and Docker Compose installed on your system
+- Node.js 22+ (for local development)
+
+### Docker Deployment (Recommended)
+
+The easiest way to run this application is using Docker:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/JorgeDelgadillo/jd-portfolio.git
+   cd jd-portfolio
+   ```
+
+2. **Build and run with Docker Compose:**
+   ```bash
+   docker-compose up --build
+   ```
+
+3. **Access the application:**
+   Open your browser and visit `http://localhost:5173`
+
+4. **Stop the application:**
+   ```bash
+   docker-compose down
+   ```
+
+### Alternative Docker Commands
+
+If you prefer using Docker directly:
+
+```bash
+# Build the Docker image
+docker build -t jd-portfolio .
+
+# Run the container
+docker run -p 5173:5173 jd-portfolio
+```
+
+### Local Development
+
+For local development without Docker:
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+4. **Preview production build:**
+   ```bash
+   npm run preview
+   ```
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework:** React 19
+- **Language:** TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS 4
+- **Linting:** ESLint
+- **Containerization:** Docker
+
+## 📦 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+
+## 🔧 Development Notes
+
+### ESLint Configuration
+
+This project uses TypeScript ESLint with recommended rules. If you need to expand the ESLint configuration for production use, you can enable type-aware lint rules:
 
 ```js
 export default tseslint.config([
@@ -39,7 +159,9 @@ export default tseslint.config([
 ])
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### React-Specific Linting
+
+For additional React-specific lint rules, you can install and configure:
 
 ```js
 // eslint.config.js
