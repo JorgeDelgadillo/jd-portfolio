@@ -18,7 +18,7 @@ function AppContainer() {
       }}
     >
       <button
-        style={{ position: 'absolute', top: 16, right: 16 }}
+        className="absolute top-4 right-4"
         onClick={toggleDarkMode}
       >
         {darkMode ? '🌙 Dark Mode' : '☀️ Light Mode'}
