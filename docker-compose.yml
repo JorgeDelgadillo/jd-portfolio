@@ -1,0 +1,8 @@
+    version: '3.8'
+    services:
+      web:
+        build:
+          context: .  # The build context (where your Dockerfile is located)
+          dockerfile: Dockerfile # The name of your Dockerfile (optional if named 'Dockerfile' in context)
+        ports:
+          - "5173:5173"  # Map port 5173 on the host to port 5173 in the container
