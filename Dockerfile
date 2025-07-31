@@ -23,12 +23,8 @@ ENV NODE_ENV=production
 RUN npm run build
 
 # Production stage
-FROM base AS production
-WORKDIR /app
-ENV NODE_ENV=production
+FROM nginx:stable-alpine AS production
 # Copy only the necessary files
-COPY --from=build /app/dist ./dist
-# Use a minimal image to serve static files (e.g., nginx or http-server)
-RUN npm install -g http-server
-EXPOSE 8080
-CMD ["http-server", "./dist", "-p", "8080"]
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+# nginx will serve the static files by default
