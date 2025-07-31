@@ -27,5 +27,5 @@ jobs:
           target: production
           # Make sure to replace with your own namespace and repository
           tags: |
-            jorgedelgadillo/jd-portfolio:${{ github.sha }}
+            jorgedelgadillo14/jd-portfolio:${{ github.sha }}
           platforms: linux/amd64
