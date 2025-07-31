@@ -3,7 +3,7 @@ import App from './App'
 import "./AppContainer.scss";
 
 function AppContainer() {
-  const { darkMode, toggleDarkMode } = useTheme();
+  const { darkMode } = useTheme();
 
   return (
     <div className={`app-container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
