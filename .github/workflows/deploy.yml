@@ -24,7 +24,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          target: production
           # Make sure to replace with your own namespace and repository
           tags: |
-            jorgedelgadillo/jd-portfolio:latest
+            jorgedelgadillo/jd-portfolio:${{ github.sha }}
           platforms: linux/amd64
