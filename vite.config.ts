@@ -10,8 +10,7 @@ export default defineConfig({
     host: true,
     allowedHosts: [
       'jorgedelgadillo.com',
-      // Allow all subdomains of jorgedelgadillo.com
-      "*.jorgedelgadillo.com",
+      'dev.jorgedelgadillo.com',
       "portfolio-reacjsportfolio-pympdv-b19e2e-31-97-131-190.traefik.me"
     ],
   },
