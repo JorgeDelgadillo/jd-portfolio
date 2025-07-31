@@ -1,6 +1,7 @@
 // Global styles and color variables
 
 // Base color palette
+$night: #00120bff;
 $night-gradient: linear-gradient(35deg, #02152b 0%, #061947 100%);
 $dark-slate-gray: #35605aff;
 $slate-gray: #6b818cff;
@@ -31,7 +32,7 @@ $highlight-color: $spring-green;
   --primary-color: #{$night};
   --secondary-color: #{$dark-slate-gray};
   --accent-color: #{$slate-gray};
-  --background-color: #{$night};
+  --background-color: #{$night-gradient};
   --highlight-color: #{$spring-green};
   --text-color: #{$white};
   --link-color: #{$spring-green};
