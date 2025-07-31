@@ -1,7 +1,7 @@
 // Global styles and color variables
 
 // Base color palette
-$night: #00120bff;
+$night: linear-gradient(35deg, #02152b 0%, #061947 100%);
 $dark-slate-gray: #35605aff;
 $slate-gray: #6b818cff;
 $lavender-web: #d8e4ffff;
@@ -13,12 +13,13 @@ $medium-gray: #cccccc;
 $lighter-gray: #e0e0e0;
 $light-green: #a0e0a0;
 $blue: #007bff;
+$light-gradient: linear-gradient(135deg, #d8e4ff 0%, #ffffff 100%);
 
 // Default theme colors
 $primary-color: $night;
 $secondary-color: $dark-slate-gray;
 $accent-color: $slate-gray;
-$background-color: $lavender-web;
+$background-color: $light-gradient;
 $highlight-color: $spring-green;
 
 :root {
@@ -43,7 +44,7 @@ $highlight-color: $spring-green;
   --primary-color: #{$white};
   --secondary-color: #{$light-gray};
   --accent-color: #{$medium-gray};
-  --background-color: #{$lighter-gray};
+  --background-color: #{$light-gradient};
   --highlight-color: #{$light-green};
   --text-color: #{$black};
   --link-color: #{$blue};

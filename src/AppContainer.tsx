@@ -7,12 +7,6 @@ function AppContainer() {
 
   return (
     <div className={`app-container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
-      <button
-        className="theme-toggle-button"
-        onClick={toggleDarkMode}
-      >
-        {darkMode ? '🌙 Dark Mode' : '☀️ Light Mode'}
-      </button>
       <App />
     </div>
   );
