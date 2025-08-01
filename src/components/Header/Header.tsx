@@ -92,8 +92,8 @@ const Header = () => {
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         } backdrop-blur-xl border-l ${
           darkMode 
-            ? 'bg-gray-900/95 border-gray-800/50' 
-            : 'bg-white/95 border-gray-200/50'
+            ? 'bg-gray-900 border-gray-800/50' 
+            : 'bg-white border-gray-200/50'
         }`}
         style={{ 
           willChange: 'transform',
@@ -105,7 +105,7 @@ const Header = () => {
         }}
       >
         <div className={`flex items-center justify-between px-6 py-6 border-b backdrop-blur-sm ${
-          darkMode ? 'border-gray-800/50' : 'border-gray-200/50'
+          darkMode ? 'border-gray-800/50 bg-gray-900' : 'border-gray-200/50 bg-white'
         }`}>
           <a href="#hero" className="flex items-center gap-3 text-xl font-bold group">
             <div className="relative">
@@ -117,8 +117,8 @@ const Header = () => {
           <button
             className={`flex items-center justify-center w-11 h-11 rounded-xl backdrop-blur-sm border transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-500/50 group ${
               darkMode 
-                ? 'bg-gray-800/50 hover:bg-red-500/20 border-gray-700/30 text-gray-200' 
-                : 'bg-white/50 hover:bg-red-500/20 border-gray-200/30 text-gray-700'
+                ? 'bg-gray-800 hover:bg-red-500/20 border-gray-700/30 text-gray-200' 
+                : 'bg-white hover:bg-red-500/20 border-gray-200/30 text-gray-700'
             }`}
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
@@ -128,15 +128,17 @@ const Header = () => {
             </svg>
           </button>
         </div>
-        <nav className="flex flex-col gap-2 px-6 py-8">
+        <nav className={`flex flex-col gap-2 px-6 py-8 ${
+          darkMode ? 'bg-gray-900' : 'bg-white'
+        }`}>
           {menuItems.map((item, index) => (
             <a
               key={item.name}
               href={item.href}
               className={`relative font-semibold text-lg transition-all duration-300 hover:text-blue-600 dark:hover:text-blue-400 py-4 px-4 rounded-xl group animate-slideIn ${
                 darkMode 
-                  ? 'text-gray-200 hover:bg-gray-800/30' 
-                  : 'text-gray-700 hover:bg-gray-100/50'
+                  ? 'text-gray-200 hover:bg-gray-800/50' 
+                  : 'text-gray-700 hover:bg-gray-100/80'
               }`}
               onClick={() => setMenuOpen(false)}
               style={{ 
@@ -156,8 +158,8 @@ const Header = () => {
             onClick={() => { toggleDarkMode(); setMenuOpen(false); }}
             className={`mt-8 mx-4 px-4 py-4 rounded-xl border backdrop-blur-sm transition-all duration-300 flex items-center gap-3 text-base font-semibold shadow-lg hover:scale-105 group ${
               darkMode 
-                ? 'bg-gray-800/50 hover:bg-gray-700/60 border-gray-700/30 text-gray-200' 
-                : 'bg-white/50 hover:bg-gray-50/80 border-gray-200/30 text-gray-700'
+                ? 'bg-gray-800 hover:bg-gray-700 border-gray-700/30 text-gray-200' 
+                : 'bg-white hover:bg-gray-50 border-gray-200/30 text-gray-700'
             }`}
             aria-label="Toggle dark mode"
           >
