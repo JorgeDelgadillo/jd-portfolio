@@ -14,7 +14,10 @@ const Header = () => {
   const { darkMode, toggleDarkMode } = useTheme();
 
   return (
-    <header className="w-full shadow-md fixed top-0 left-0 z-50">
+    <header 
+      className="w-full shadow-md fixed top-0 left-0 z-50"
+      style={{ background: 'var(--background-color)' }}
+    >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2 text-xl font-bold">
@@ -66,8 +69,11 @@ const Header = () => {
 
       {/* Mobile Slide Menu (from right) */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-        style={{ willChange: 'transform' }}
+        className={`fixed top-0 right-0 h-full w-64 shadow-lg z-50 transform transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        style={{ 
+          willChange: 'transform',
+          background: 'var(--background-color)'
+        }}
       >
         <div className="flex items-center justify-between px-6 py-4 border-b">
           <a href="#hero" className="flex items-center gap-2 text-xl font-bold">
@@ -118,7 +124,8 @@ const Header = () => {
       {/* Overlay when menu is open */}
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-40 z-40 md:hidden"
+          className="fixed inset-0 z-40 md:hidden"
+          style={{ background: 'var(--background-color)', opacity: 0.95 }}
           onClick={() => setMenuOpen(false)}
         />
       )}
