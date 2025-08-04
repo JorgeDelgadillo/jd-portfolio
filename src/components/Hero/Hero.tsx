@@ -54,11 +54,7 @@ const Hero = () => {
           <div className="flex flex-wrap gap-4 pt-4">
             <a
               href="#projects"
-              className={`px-8 py-3 rounded-lg font-semibold transition-colors ${
-                darkMode 
-                  ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
-              }`}
+              className={`px-8 py-3 rounded-lg font-semibold transition-colors bg-blue-600 text-white hover:bg-blue-700`}
             >
               View My Work
             </a>
