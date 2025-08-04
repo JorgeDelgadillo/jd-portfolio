@@ -108,9 +108,7 @@ const Hero = () => {
               />
             </div>
             {/* Decorative elements */}
-            <div className={`absolute -top-4 -right-4 w-8 h-8 rounded-full animate-pulse ${
-              darkMode ? 'bg-blue-500' : 'bg-blue-500'
-            }`}></div>
+            <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full animate-pulse bg-blue-500"></div>
             <div className={`absolute -bottom-4 -left-4 w-6 h-6 rounded-full animate-pulse delay-300 ${
               darkMode ? 'bg-blue-400' : 'bg-purple-500'
             }`}></div>
