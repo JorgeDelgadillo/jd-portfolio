@@ -62,9 +62,7 @@ const Footer = () => {
               Let's create something amazing together!
             </p>
             <div className="space-y-2">
-              <p className={`flex items-center gap-2 ${
-                darkMode ? 'text-gray-300' : 'text-gray-300'
-              }`}>
+              <p className="flex items-center gap-2 text-gray-300">
                 <svg className={`w-5 h-5 ${
                   darkMode ? 'text-blue-400' : 'text-blue-400'
                 }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
