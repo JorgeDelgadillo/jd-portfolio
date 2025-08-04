@@ -66,7 +66,7 @@ const Experience = () => {
     <section 
       id="experience" 
       className={`py-20 px-6 ${
-        darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
+        darkMode ? 'bg-black text-white' : 'bg-white text-gray-900'
       }`}
     >
       <div className="max-w-6xl mx-auto">
@@ -74,7 +74,9 @@ const Experience = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Professional Experience
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className={`text-lg max-w-2xl mx-auto ${
+            darkMode ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             My journey through various roles and companies, building expertise in full-stack development
           </p>
         </div>
@@ -82,46 +84,58 @@ const Experience = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className={`absolute left-8 top-0 bottom-0 w-0.5 ${
-            darkMode ? 'bg-gray-700' : 'bg-gray-300'
-          } hidden md:block`}></div>
+          <div className={`absolute left-8 top-0 bottom-0 w-0.5 hidden md:block ${
+            darkMode ? 'bg-slate-700' : 'bg-gray-300'
+          }`}></div>
 
           {/* Experience items */}
           <div className="space-y-12">
             {experiences.map((exp) => (
               <div key={exp.id} className="relative flex flex-col md:flex-row gap-8">
                 {/* Timeline dot */}
-                <div className="hidden md:flex absolute left-6 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
+                <div className={`hidden md:flex absolute left-6 w-4 h-4 rounded-full border-4 z-10 ${
+                  darkMode 
+                    ? 'bg-blue-600 border-black' 
+                    : 'bg-blue-600 border-white'
+                }`}></div>
 
                 {/* Content */}
                 <div className="md:ml-20 flex-1">
-                  <div className={`p-6 rounded-lg shadow-lg ${
-                    darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-gray-50 border border-gray-200'
-                  } hover:shadow-xl transition-shadow`}>
+                  <div className={`p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow ${
+                    darkMode ? 'bg-slate-900 border border-slate-800' : 'bg-gray-50 border border-gray-200'
+                  }`}>
                     {/* Header */}
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+                        <h3 className={`text-xl font-bold ${
+                          darkMode ? 'text-blue-400' : 'text-blue-600'
+                        }`}>
                           {exp.position}
                         </h3>
                         <h4 className="text-lg font-semibold mb-1">{exp.company}</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{exp.location}</p>
+                        <p className={`text-sm ${
+                          darkMode ? 'text-gray-400' : 'text-gray-600'
+                        }`}>{exp.location}</p>
                       </div>
-                      <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+                      <div className={`px-3 py-1 rounded-full text-sm font-medium mt-2 sm:mt-0 self-start ${
                         darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800'
-                      } mt-2 sm:mt-0 self-start`}>
+                      }`}>
                         {exp.period}
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                    <p className={`mb-4 leading-relaxed ${
+                      darkMode ? 'text-gray-300' : 'text-gray-600'
+                    }`}>
                       {exp.description}
                     </p>
 
                     {/* Technologies */}
                     <div className="mb-4">
-                      <h5 className="font-semibold mb-2 text-sm text-gray-700 dark:text-gray-300">
+                      <h5 className={`font-semibold mb-2 text-sm ${
+                        darkMode ? 'text-gray-300' : 'text-gray-700'
+                      }`}>
                         Technologies Used:
                       </h5>
                       <div className="flex flex-wrap gap-2">
@@ -130,7 +144,7 @@ const Experience = () => {
                             key={tech}
                             className={`px-2 py-1 text-xs rounded ${
                               darkMode 
-                                ? 'bg-gray-700 text-gray-200' 
+                                ? 'bg-slate-800 text-gray-200' 
                                 : 'bg-gray-200 text-gray-700'
                             }`}
                           >
@@ -142,16 +156,22 @@ const Experience = () => {
 
                     {/* Achievements */}
                     <div>
-                      <h5 className="font-semibold mb-2 text-sm text-gray-700 dark:text-gray-300">
+                      <h5 className={`font-semibold mb-2 text-sm ${
+                        darkMode ? 'text-gray-300' : 'text-gray-700'
+                      }`}>
                         Key Achievements:
                       </h5>
                       <ul className="space-y-1">
                         {exp.achievements.map((achievement, achIndex) => (
                           <li 
                             key={achIndex}
-                            className="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2"
+                            className={`text-sm flex items-start gap-2 ${
+                              darkMode ? 'text-gray-400' : 'text-gray-600'
+                            }`}
                           >
-                            <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                            <span className={`mt-1 ${
+                              darkMode ? 'text-blue-400' : 'text-blue-600'
+                            }`}>•</span>
                             {achievement}
                           </li>
                         ))}
@@ -166,10 +186,16 @@ const Experience = () => {
 
         {/* Download Resume CTA */}
         <div className="text-center mt-16">
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <p className={`mb-6 ${
+            darkMode ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             Want to know more about my professional background?
           </p>
-          <button className="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center gap-2">
+          <button className={`px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center gap-2 ${
+            darkMode 
+              ? 'bg-blue-600 text-white hover:bg-blue-700' 
+              : 'bg-blue-600 text-white hover:bg-blue-700'
+          }`}>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
