@@ -99,11 +99,7 @@ const Footer = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`block transition-colors ${
-                    darkMode 
-                      ? 'text-gray-300 hover:text-blue-400' 
-                      : 'text-gray-300 hover:text-blue-400'
-                  }`}
+                  className="block transition-colors text-gray-300 hover:text-blue-400"
                 >
                   {link.name}
                 </a>
