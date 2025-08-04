@@ -1,0 +1,172 @@
+// Main SCSS file - Global styles and imports
+@import 'variables';
+
+// Global utility classes that can be used throughout the project
+
+// Gradient utilities
+.gradient-primary {
+  background: linear-gradient(135deg, color(blue-500), color(purple-500), color(indigo-600));
+}
+
+.gradient-text-primary {
+  background: linear-gradient(135deg, color(blue-600), color(purple-600), color(indigo-600));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, color(purple-500), color(indigo-600));
+}
+
+// Glassmorphism utilities
+.glassmorphism {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glassmorphism-light {
+  background: rgba-color(white, 0.9);
+  border: 1px solid rgba-color(gray-200, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba-color(black, 0.1), 0 1px 0 rgba-color(white, 0.8);
+}
+
+.glassmorphism-dark {
+  background: rgba-color(gray-900, 0.9);
+  border: 1px solid rgba-color(gray-800, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba-color(black, 0.3), 0 1px 0 rgba-color(white, 0.05);
+}
+
+// Animation utilities
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+// Global animation keyframes
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Theme-aware text colors
+.text-theme-primary {
+  color: color(gray-900);
+  
+  .dark & {
+    color: color(white);
+  }
+}
+
+.text-theme-secondary {
+  color: color(gray-700);
+  
+  .dark & {
+    color: color(gray-200);
+  }
+}
+
+.text-theme-muted {
+  color: color(gray-500);
+  
+  .dark & {
+    color: color(gray-400);
+  }
+}
+
+// Background utilities
+.bg-theme-surface {
+  background-color: color(gray-50);
+  
+  .dark & {
+    background-color: color(gray-800);
+  }
+}
+
+.bg-theme-card {
+  background-color: color(white);
+  
+  .dark & {
+    background-color: color(gray-900);
+  }
+}
+
+// Border utilities
+.border-theme {
+  border-color: color(gray-200);
+  
+  .dark & {
+    border-color: color(gray-700);
+  }
+}
+
+// Hover utilities
+.hover-theme {
+  &:hover {
+    background-color: color(gray-100);
+  }
+  
+  .dark &:hover {
+    background-color: color(gray-700);
+  }
+}
+
+// Focus utilities
+.focus-theme {
+  &:focus {
+    outline: 2px solid color(blue-500);
+    outline-offset: 2px;
+  }
+  
+  .dark &:focus {
+    outline-color: color(blue-400);
+  }
+}
