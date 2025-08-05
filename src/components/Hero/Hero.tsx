@@ -14,7 +14,7 @@ const Hero = () => {
     { name: 'Django', icon: '🎯' },
     { name: 'PostgreSQL', icon: '🐘' },
     { name: 'MongoDB', icon: '🍃' },
-    { name: 'Kotlin', icon: '�' },
+    { name: 'Kotlin', icon: '🟠' },
     { name: 'Swift', icon: '🧡' }
   ];
 
