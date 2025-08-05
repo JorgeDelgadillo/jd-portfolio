@@ -6,58 +6,48 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      company: 'TechCorp Solutions',
-      position: 'Senior Full Stack Developer',
-      period: '2022 - Present',
-      location: 'San Francisco, CA',
-      description: 'Led development of scalable web applications using React, Node.js, and AWS. Mentored junior developers and improved system performance by 40%.',
-      technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'PostgreSQL'],
+      company: 'Instawork',
+      position: 'Software Engineer',
+      period: 'Dec 2021 – May 2025',
+      location: 'San Francisco, CA (Remote from Mexico)',
+      description: 'Maintained and supported critical Payments infrastructure using Python (Stripe, Hyperwallet). Built native Android and iOS components and integrated with React Native.',
+      technologies: ['Python', 'React Native', 'Kotlin', 'Swift', 'Stripe', 'Hyperwallet', 'LangChain'],
       achievements: [
-        'Reduced page load times by 40% through optimization',
-        'Led a team of 5 developers on major product redesign',
-        'Implemented CI/CD pipeline reducing deployment time by 60%'
+        'Maintained critical Payments infrastructure using Python (Stripe, Hyperwallet)',
+        'Implemented banking services module including transactions, 2FA, and card support',
+        'Built native Android and iOS components (Kotlin/Swift) integrated with React Native',
+        'Designed custom AI agents with LangChain for internal automation',
+        'Led greenfield projects, refactors, and module removals',
+        'Built end-to-end testing flows with Appium and Browserstack'
       ]
     },
     {
       id: 2,
-      company: 'Digital Innovations Inc',
-      position: 'Full Stack Developer',
-      period: '2020 - 2022',
-      location: 'Austin, TX',
-      description: 'Developed and maintained multiple client applications using modern web technologies. Collaborated with cross-functional teams to deliver high-quality solutions.',
-      technologies: ['Vue.js', 'Python', 'Django', 'Docker', 'MongoDB'],
+      company: 'Stateoftheart.ai',
+      position: 'Fullstack Developer',
+      period: 'Aug 2020 – Nov 2021',
+      location: 'Querétaro, Mexico',
+      description: 'Developed fullstack features for web applications using React. Maintained Dockerized services and basic AWS infrastructure.',
+      technologies: ['React', 'Docker', 'AWS', 'TypeScript', 'Python'],
       achievements: [
-        'Built 15+ responsive web applications',
-        'Improved code coverage from 60% to 95%',
-        'Reduced bug reports by 50% through better testing'
+        'Developed fullstack features for web applications using React',
+        'Maintained Dockerized services and basic AWS infrastructure',
+        'Contributed across frontend/backend layers for fast-paced deployments'
       ]
     },
     {
       id: 3,
-      company: 'StartupXYZ',
-      position: 'Frontend Developer',
-      period: '2019 - 2020',
-      location: 'Remote',
-      description: 'Focused on building responsive user interfaces and improving user experience. Worked closely with designers to implement pixel-perfect designs.',
-      technologies: ['React', 'JavaScript', 'Sass', 'Firebase'],
+      company: 'Corebooks',
+      position: 'Software Developer',
+      period: 'Jan 2019 – Jun 2020',
+      location: 'Celaya, Mexico',
+      description: 'Built cross-platform mobile point-of-sale system with React Native for mobile and React for web. Integrated Stripe payments and created ERP modules in Odoo.',
+      technologies: ['React Native', 'React', 'Python', 'Stripe', 'Odoo'],
       achievements: [
-        'Increased user engagement by 30%',
-        'Implemented responsive design system',
-        'Reduced bounce rate by 25%'
-      ]
-    },
-    {
-      id: 4,
-      company: 'WebDev Agency',
-      position: 'Junior Developer',
-      period: '2018 - 2019',
-      location: 'New York, NY',
-      description: 'Started my professional journey building websites and learning best practices in web development. Gained experience in multiple programming languages and frameworks.',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
-      achievements: [
-        'Completed 20+ client projects',
-        'Learned 5+ programming languages',
-        'Received "Rising Star" award'
+        'Built cross-platform mobile point-of-sale system with React Native',
+        'Developed web version using React',
+        'Integrated Stripe payments for transaction processing',
+        'Created ERP modules in Odoo using Python'
       ]
     }
   ];
@@ -184,23 +174,28 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Download Resume CTA */}
+        {/* View Resume CTA */}
         <div className="text-center mt-16">
           <p className={`mb-6 ${
             darkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
             Want to know more about my professional background?
           </p>
-          <button className={`px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center gap-2 ${
+          <a 
+            href="/resume_2025.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center gap-2 ${
             darkMode 
               ? 'bg-blue-600 text-white hover:bg-blue-700' 
               : 'bg-blue-600 text-white hover:bg-blue-700'
           }`}>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
             </svg>
-            Download Full Resume
-          </button>
+            View Full Resume
+          </a>
         </div>
       </div>
     </section>

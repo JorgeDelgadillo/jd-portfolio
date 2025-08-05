@@ -6,16 +6,16 @@ const Hero = () => {
   const technologies = [
     { name: 'React', icon: '⚛️' },
     { name: 'TypeScript', icon: '🔷' },
-    { name: 'JavaScript', icon: '💛' },
-    { name: 'Node.js', icon: '💚' },
-    { name: 'Python', icon: '🐍' },
+    { name: 'Python', icon: '�' },
+    { name: 'React Native', icon: '�' },
+    { name: 'JavaScript', icon: '�' },
     { name: 'AWS', icon: '☁️' },
     { name: 'Docker', icon: '🐳' },
-    { name: 'Git', icon: '📱' },
-    { name: 'MongoDB', icon: '🍃' },
+    { name: 'Django', icon: '🎯' },
     { name: 'PostgreSQL', icon: '🐘' },
-    { name: 'GraphQL', icon: '📊' },
-    { name: 'Tailwind CSS', icon: '🎨' }
+    { name: 'MongoDB', icon: '🍃' },
+    { name: 'Kotlin', icon: '�' },
+    { name: 'Swift', icon: '🧡' }
   ];
 
   return (
@@ -41,13 +41,14 @@ const Hero = () => {
           <p className={`text-xl md:text-2xl ${
             darkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
-            Full Stack Developer & Software Engineer
+            Software Engineer – Fullstack (React, Python, AWS)
           </p>
           <p className={`text-lg max-w-lg ${
             darkMode ? 'text-gray-400' : 'text-gray-500'
           }`}>
-            I'm passionate about building scalable web applications and solving complex problems 
-            with clean, efficient code. Welcome to my digital portfolio where creativity meets functionality.
+            Versatile and detail-oriented Fullstack Software Engineer with over 5 years of experience 
+            in startups and international environments. Passionate about building scalable systems, 
+            automation, and delivering impactful user experiences.
           </p>
           
           {/* CTA Buttons */}
@@ -58,8 +59,9 @@ const Hero = () => {
             >
               View My Work
             </a>
+
             <a
-              href="#footer"
+              href="mailto:jorgdelgadillo@gmail.com"
               className={`px-8 py-3 border-2 rounded-lg font-semibold transition-colors ${
                 darkMode 
                   ? 'border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white' 
@@ -102,7 +104,7 @@ const Hero = () => {
               darkMode ? 'ring-4 ring-slate-700' : 'ring-4 ring-gray-200'
             }`}>
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                src="/avatar.jpg" // Replace with your avatar image path
                 alt="Jorge Delgadillo"
                 className="w-full h-full object-cover"
               />

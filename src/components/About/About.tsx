@@ -4,10 +4,11 @@ const About = () => {
   const { darkMode } = useTheme();
 
   const skills = [
-    { category: 'Frontend', items: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Vue.js'] },
-    { category: 'Backend', items: ['Node.js', 'Python', 'Express', 'FastAPI', 'GraphQL'] },
-    { category: 'Database', items: ['PostgreSQL', 'MongoDB', 'Redis', 'Firebase'] },
-    { category: 'Tools & DevOps', items: ['Docker', 'AWS', 'Git', 'CI/CD', 'Kubernetes'] }
+    { category: 'Languages', items: ['Python', 'TypeScript', 'JavaScript', 'Kotlin', 'Swift'] },
+    { category: 'Frameworks', items: ['React', 'React Native', 'Django'] },
+    { category: 'DevOps & Tools', items: ['Docker', 'AWS (EC2, S3, KMS)', 'Datadog', 'Sentry', 'Kubernetes'] },
+    { category: 'Databases & Testing', items: ['PostgreSQL', 'MongoDB', 'Jest', 'Pytest', 'Appium'] },
+    { category: 'Other Technologies', items: ['Stripe', 'Hyperwallet', 'LangChain', 'GraphQL', 'Browserstack'] }
   ];
 
   return (
@@ -36,23 +37,23 @@ const About = () => {
             <p className={`leading-relaxed ${
               darkMode ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              I'm a passionate full-stack developer with over 5 years of experience in creating 
-              digital solutions that make a difference. My journey started with a curiosity about 
-              how things work under the hood, which led me to dive deep into the world of programming.
+              I'm a versatile and detail-oriented Fullstack Software Engineer with over 5 years of experience 
+              in startups and international environments. My journey spans from building critical payments 
+              infrastructure to developing cross-platform mobile applications that serve thousands of users.
             </p>
             <p className={`leading-relaxed ${
               darkMode ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              What drives me is the ability to transform complex problems into elegant, user-friendly 
-              solutions. I believe in writing clean, maintainable code and staying up-to-date with 
-              the latest technologies and best practices in software development.
+              My expertise lies in creating scalable backend systems, designing seamless user experiences, 
+              and managing cloud infrastructure. I have a track record of leading greenfield projects, 
+              implementing automation solutions, and integrating complex payment systems like Stripe and Hyperwallet.
             </p>
             <p className={`leading-relaxed ${
               darkMode ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source 
-              projects, or sharing knowledge with the developer community. I'm always eager to take on 
-              new challenges and collaborate with like-minded individuals.
+              Based in Querétaro, Mexico, I've had the privilege of working remotely with international teams, 
+              particularly in San Francisco. I'm passionate about clean code, test-driven development, and 
+              building AI-powered solutions that automate complex workflows.
             </p>
 
             {/* Quick Stats */}
@@ -68,7 +69,7 @@ const About = () => {
               <div className="text-center">
                 <div className={`text-2xl font-bold ${
                   darkMode ? 'text-blue-400' : 'text-blue-600'
-                }`}>50+</div>
+                }`}>20+</div>
                 <div className={`text-sm ${
                   darkMode ? 'text-gray-400' : 'text-gray-600'
                 }`}>Projects Completed</div>
@@ -76,7 +77,7 @@ const About = () => {
               <div className="text-center">
                 <div className={`text-2xl font-bold ${
                   darkMode ? 'text-blue-400' : 'text-blue-600'
-                }`}>10+</div>
+                }`}>15+</div>
                 <div className={`text-sm ${
                   darkMode ? 'text-gray-400' : 'text-gray-600'
                 }`}>Technologies</div>
@@ -113,16 +114,21 @@ const About = () => {
 
             {/* Download Resume Button */}
             <div className="pt-6">
-              <button className={`px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2 ${
-                darkMode 
-                  ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
-              }`}>
+              <a 
+                href="/resume_2025.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors ${
+                  darkMode 
+                    ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                }`}
+              >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 Download Resume
-              </button>
+              </a>
             </div>
           </div>
         </div>
