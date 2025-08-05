@@ -7,7 +7,7 @@ const Hero = () => {
     { name: 'React', icon: '⚛️' },
     { name: 'TypeScript', icon: '🔷' },
     { name: 'Python', icon: '🐍' },
-    { name: 'React Native', icon: '�' },
+    { name: 'React Native', icon: '📱' },
     { name: 'JavaScript', icon: '�' },
     { name: 'AWS', icon: '☁️' },
     { name: 'Docker', icon: '🐳' },
