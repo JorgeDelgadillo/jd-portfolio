@@ -6,7 +6,7 @@ const Hero = () => {
   const technologies = [
     { name: 'React', icon: '⚛️' },
     { name: 'TypeScript', icon: '🔷' },
-    { name: 'Python', icon: '�' },
+    { name: 'Python', icon: '🐍' },
     { name: 'React Native', icon: '�' },
     { name: 'JavaScript', icon: '�' },
     { name: 'AWS', icon: '☁️' },
