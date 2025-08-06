@@ -54,7 +54,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 pt-4">
             <a
-              href="#projects"
+              href="#experience"
               className={`px-8 py-3 rounded-lg font-semibold transition-colors bg-blue-600 text-white hover:bg-blue-700`}
             >
               View My Work

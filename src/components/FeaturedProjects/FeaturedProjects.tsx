@@ -97,7 +97,7 @@ const FeaturedProjects = () => {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          {/* <div className="mt-12 text-center">
             <p className={`text-sm mb-4 ${
               darkMode ? 'text-gray-400' : 'text-gray-500'
             }`}>
@@ -118,7 +118,7 @@ const FeaturedProjects = () => {
               </svg>
               Visit GitHub
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
