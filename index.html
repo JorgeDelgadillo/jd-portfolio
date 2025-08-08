@@ -9,7 +9,8 @@
     <!-- Primary SEO -->
     <meta name="description" content="Portfolio of Jorge Delgadillo, a Fullstack Software Engineer specializing in React, TypeScript, Python, AWS, and scalable systems. Explore experience, projects, and resume." />
     <meta name="author" content="Jorge Delgadillo" />
-    <link rel="canonical" href="https://example.com/" />
+  <!-- Will be replaced at build using Vite env; JS fallback below ensures correctness locally -->
+  <link rel="canonical" href="https://jorgedelgadillo.com/" />
 
     <!-- Manifest & Theming -->
     <link rel="manifest" href="/site.webmanifest" />
@@ -21,7 +22,7 @@
     <meta property="og:site_name" content="Jorge Delgadillo — Portfolio" />
     <meta property="og:title" content="Jorge Delgadillo — Fullstack Software Engineer" />
     <meta property="og:description" content="Fullstack Software Engineer with 5+ years of experience. React, TypeScript, Python, AWS, mobile, and payments infrastructure." />
-    <meta property="og:url" content="https://example.com/" />
+  <meta property="og:url" content="https://jorgedelgadillo.com/" />
     <meta property="og:image" content="/avatar.jpg" />
     <meta property="og:image:alt" content="Portrait of Jorge Delgadillo" />
 
@@ -39,8 +40,8 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Jorge Delgadillo",
-        "url": "https://example.com/",
-        "image": "https://example.com/avatar.jpg",
+  "url": "https://jorgedelgadillo.com/",
+  "image": "https://jorgedelgadillo.com/avatar.jpg",
         "jobTitle": "Software Engineer",
         "worksFor": {
           "@type": "Organization",
@@ -54,7 +55,10 @@
       }
     </script>
 
-    <!-- Hydrate absolute URLs at runtime (fallback if canonical domain isn't set yet) -->
+  <!-- Robots control (env-driven) -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Hydrate absolute URLs at runtime (fallback if canonical domain isn't set yet) -->
     <script>
       (function() {
         try {
@@ -62,12 +66,12 @@
           var abs = function(path) { return path.startsWith('http') ? path : origin + path; };
           // Canonical
           var link = document.querySelector('link[rel="canonical"]');
-          if (link && (link.href.includes('example.com') || !/^https?:\/\//.test(link.href))) {
+          if (link && (/https:\/\/jorgedelgadillo.com\//.test(link.href) || !/^https?:\/\//.test(link.href))) {
             link.href = origin + '/';
           }
           // og:url
           var ogUrl = document.querySelector('meta[property="og:url"]');
-          if (ogUrl && (ogUrl.content.includes('example.com') || !/^https?:\/\//.test(ogUrl.content))) {
+          if (ogUrl && (/https:\/\/jorgedelgadillo.com\//.test(ogUrl.content) || !/^https?:\/\//.test(ogUrl.content))) {
             ogUrl.setAttribute('content', origin + '/');
           }
           // og:image and twitter:image -> ensure absolute
@@ -79,11 +83,11 @@
           });
           // JSON-LD url/image
           var ld = document.querySelector('script[type="application/ld+json"]');
-          if (ld) {
+      if (ld) {
             var data = JSON.parse(ld.textContent || '{}');
             if (data && data['@type'] === 'Person') {
-              if (!data.url || data.url.includes('example.com')) data.url = origin + '/';
-              if (!data.image || /example.com\/.+/.test(data.image) || !/^https?:\/\//.test(data.image)) data.image = origin + '/avatar.jpg';
+  if (!data.url || /https:\/\/jorgedelgadillo.com\//.test(data.url)) data.url = origin + '/';
+  if (!data.image || /https:\/\/jorgedelgadillo.com\/.+/.test(data.image) || !/^https?:\/\//.test(data.image)) data.image = origin + '/avatar.jpg';
               ld.textContent = JSON.stringify(data);
             }
           }
