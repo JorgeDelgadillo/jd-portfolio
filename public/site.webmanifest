@@ -1,0 +1,18 @@
+{
+	"name": "Jorge Delgadillo — Portfolio",
+	"short_name": "JD Portfolio",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"background_color": "#0b1120",
+	"theme_color": "#0b1120",
+	"lang": "en",
+	"icons": [
+		{
+			"src": "/jd-logo.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "any maskable"
+		}
+	]
+}

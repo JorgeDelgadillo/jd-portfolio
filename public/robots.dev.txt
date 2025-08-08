@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Dev environment: block indexing
+Sitemap: https://dev.jorgedelgadillo.com/sitemap.xml
