@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Update to your production URL
+Sitemap: https://example.com/sitemap.xml

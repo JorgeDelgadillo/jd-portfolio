@@ -119,7 +119,9 @@ const Footer = () => {
                 Send Message
               </a>
               <a
-                href="#"
+                href="/resume_2025.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`block w-fit px-6 py-3 border rounded-lg font-semibold transition-colors ${
                   darkMode 
                     ? 'border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white' 
