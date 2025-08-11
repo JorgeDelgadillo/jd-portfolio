@@ -44,6 +44,7 @@ services:
 
 volumes:
   node_modules:
-\n+networks:
+
+networks:
   dokploy-network:
     external: true
