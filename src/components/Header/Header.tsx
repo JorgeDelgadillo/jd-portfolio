@@ -81,8 +81,8 @@ const Header = () => {
             </div>
             <div className={`absolute -inset-1 rounded-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300 blur-sm ${
               darkMode 
-                ? 'bg-gradient-to-r from-blue-600 to-blue-800' 
-                : 'bg-gradient-to-r from-blue-500 to-blue-600'
+                ? 'bg-blue-700' 
+                : 'bg-blue-600'
             }`}></div>
           </div>
           <span className={`hidden sm:inline font-mono font-bold text-xl transition-all duration-300 ${
@@ -109,13 +109,13 @@ const Header = () => {
               {item.name}
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full rounded-full ${
                 darkMode 
-                  ? 'bg-gradient-to-r from-blue-400 to-blue-600' 
-                  : 'bg-gradient-to-r from-blue-500 to-purple-500'
+                  ? 'bg-blue-500' 
+                  : 'bg-blue-600'
               }`}></span>
               <div className={`absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 ${
                 darkMode 
-                  ? 'bg-gradient-to-r from-blue-500/10 to-blue-600/10' 
-                  : 'bg-gradient-to-r from-blue-500/5 to-purple-500/5'
+                  ? 'bg-blue-600/10' 
+                  : 'bg-blue-500/10'
               }`}></div>
             </a>
           ))}
@@ -269,12 +269,12 @@ const Header = () => {
             >
               <span className="relative z-10 flex items-center gap-3">
                 <span className={`w-2 h-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                  darkMode ? 'bg-gradient-to-r from-blue-400 to-blue-600' : 'bg-gradient-to-r from-blue-500 to-purple-500'
+                  darkMode ? 'bg-blue-500' : 'bg-blue-600'
                 }`}></span>
                 {item.name}
               </span>
               <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                darkMode ? 'bg-gradient-to-r from-blue-500/10 to-blue-600/10' : 'bg-gradient-to-r from-blue-500/10 to-purple-500/10'
+                darkMode ? 'bg-blue-600/10' : 'bg-blue-500/10'
               }`}></div>
             </a>
           ))}
