@@ -30,10 +30,10 @@ const Hero = () => {
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             Hi, I'm{' '}
-            <span className={`bg-gradient-to-r bg-clip-text text-transparent ${
+            <span className={`${
               darkMode 
-                ? 'from-blue-400 to-blue-600' 
-                : 'from-blue-600 to-purple-600'
+                ? 'text-blue-400' 
+                : 'text-blue-600'
             }`}>
               Jorge Delgadillo
             </span>

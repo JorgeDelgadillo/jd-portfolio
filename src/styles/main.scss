@@ -3,20 +3,17 @@
 
 // Global utility classes that can be used throughout the project
 
-// Gradient utilities
-.gradient-primary {
-  background: linear-gradient(135deg, color(blue-500), color(purple-500), color(indigo-600));
+// Flat color utilities (replacing gradients)
+.color-primary {
+  background-color: color(blue-600);
 }
 
-.gradient-text-primary {
-  background: linear-gradient(135deg, color(blue-600), color(purple-600), color(indigo-600));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.text-primary-solid {
+  color: color(blue-700);
 }
 
-.gradient-secondary {
-  background: linear-gradient(135deg, color(purple-500), color(indigo-600));
+.color-secondary {
+  background-color: color(indigo-600);
 }
 
 // Glassmorphism utilities
