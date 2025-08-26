@@ -62,7 +62,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
       return () => {
         if (mq.removeEventListener) mq.removeEventListener('change', handleChange);
-        else mq.removeListener(handleChange as (e: MediaQueryListEvent) => void);
+        else mq.removeListener(handleChange);
       };
     }
 
