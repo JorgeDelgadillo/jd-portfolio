@@ -15,7 +15,7 @@ A modern portfolio built with React, TypeScript, and Vite.
 
 1. **Clone the repository:**
   ```bash
-  git clone https://github.com/yourusername/jd-portfolio.git
+  git clone https://github.com/<your-username>/jd-portfolio.git
   cd jd-portfolio
   ```
 
