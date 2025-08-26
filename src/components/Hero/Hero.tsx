@@ -9,7 +9,7 @@ const Hero = () => {
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+      if (menuRef.current && e.target && !menuRef.current.contains(e.target as Node)) {
         setMenuOpen(false);
       }
     }
