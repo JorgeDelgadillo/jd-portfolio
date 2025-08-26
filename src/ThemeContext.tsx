@@ -16,22 +16,90 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== 'undefined' && window.matchMedia) {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const STORAGE_KEY = 'theme-preference'; // values: 'system' | 'dark' | 'light'
+
+  const getInitialPreference = (): 'system' | 'dark' | 'light' => {
+    if (typeof window === 'undefined') return 'system';
+
+    try {
+      const stored = window.localStorage.getItem(STORAGE_KEY);
+      if (stored === 'dark' || stored === 'light' || stored === 'system') return stored as any;
+    } catch (e) {
+      // localStorage may be unavailable in some environments
     }
-    return false; // Default to light mode if `window` is undefined
+
+    return 'system';
+  };
+
+  const [preference, setPreference] = useState<'system' | 'dark' | 'light'>(getInitialPreference);
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false;
+    if (getInitialPreference() === 'system' && window.matchMedia)
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return getInitialPreference() === 'dark';
   });
 
+  // Keep document root class in sync for Tailwind or global selectors
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    if (darkMode) document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
   }, [darkMode]);
 
-  const toggleDarkMode = () => setDarkMode((prev) => !prev);
+  // When preference changes, derive darkMode and (if 'system') listen to system changes.
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) {
+      // no media query support, just derive from explicit preference
+      setDarkMode(preference === 'dark');
+      return;
+    }
+
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+    if (preference === 'system') {
+      // set initial according to system
+      setDarkMode(mq.matches);
+
+      const handleChange = (e: MediaQueryListEvent) => setDarkMode(e.matches);
+
+      if (mq.addEventListener) mq.addEventListener('change', handleChange as EventListener);
+      else mq.addListener(handleChange as (e: MediaQueryListEvent) => void);
+
+      return () => {
+        if (mq.removeEventListener) mq.removeEventListener('change', handleChange as EventListener);
+        else mq.removeListener(handleChange as (e: MediaQueryListEvent) => void);
+      };
+    }
+
+    // explicit preference -> set darkMode accordingly
+    setDarkMode(preference === 'dark');
+    return undefined;
+  }, [preference]);
+
+  const toggleDarkMode = () => {
+    setPreference((prev) => {
+      // If currently following system, toggle should pick the opposite of current system value
+      if (prev === 'system') {
+        const systemDark = typeof window !== 'undefined' && window.matchMedia
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false;
+        const next = systemDark ? 'light' : 'dark';
+        try {
+          window.localStorage.setItem(STORAGE_KEY, next);
+        } catch (e) {
+          // ignore
+        }
+        return next;
+      }
+
+      const next = prev === 'dark' ? 'light' : 'dark';
+      try {
+        window.localStorage.setItem(STORAGE_KEY, next);
+      } catch (e) {
+        // ignore
+      }
+      return next;
+    });
+  };
 
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
