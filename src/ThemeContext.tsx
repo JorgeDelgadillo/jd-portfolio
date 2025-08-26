@@ -39,16 +39,13 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     return getInitialPreference() === 'dark';
   });
 
-  // Keep document root class in sync for Tailwind or global selectors
   useEffect(() => {
     if (darkMode) document.documentElement.classList.add('dark');
     else document.documentElement.classList.remove('dark');
   }, [darkMode]);
 
-  // When preference changes, derive darkMode and (if 'system') listen to system changes.
   useEffect(() => {
     if (typeof window === 'undefined' || !window.matchMedia) {
-      // no media query support, just derive from explicit preference
       setDarkMode(preference === 'dark');
       return;
     }
@@ -56,7 +53,6 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
 
     if (preference === 'system') {
-      // set initial according to system
       setDarkMode(mq.matches);
 
       const handleChange = (e: MediaQueryListEvent) => setDarkMode(e.matches);
@@ -70,14 +66,12 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       };
     }
 
-    // explicit preference -> set darkMode accordingly
     setDarkMode(preference === 'dark');
     return undefined;
   }, [preference]);
 
   const toggleDarkMode = () => {
     setPreference((prev) => {
-      // If currently following system, toggle should pick the opposite of current system value
       if (prev === 'system') {
         const systemDark = typeof window !== 'undefined' && window.matchMedia
           ? window.matchMedia('(prefers-color-scheme: dark)').matches
