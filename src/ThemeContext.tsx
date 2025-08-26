@@ -23,7 +23,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (stored === 'dark' || stored === 'light' || stored === 'system') return stored as any;
+      if (stored === 'dark' || stored === 'light' || stored === 'system') return stored as 'system' | 'dark' | 'light';
     } catch (e) {
       // localStorage may be unavailable in some environments
     }
