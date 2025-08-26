@@ -1,4 +1,5 @@
 
+
 # JD Portfolio
 
 A modern portfolio built with React, TypeScript, and Vite.
@@ -14,7 +15,7 @@ A modern portfolio built with React, TypeScript, and Vite.
 
 1. **Clone the repository:**
   ```bash
-  git clone https://github.com/JorgeDelgadillo/jd-portfolio.git
+  git clone https://github.com/yourusername/jd-portfolio.git
   cd jd-portfolio
   ```
 
