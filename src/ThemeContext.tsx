@@ -57,11 +57,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
       const handleChange = (e: MediaQueryListEvent) => setDarkMode(e.matches);
 
-      if (mq.addEventListener) mq.addEventListener('change', handleChange as EventListener);
+      if (mq.addEventListener) mq.addEventListener('change', handleChange);
       else mq.addListener(handleChange as (e: MediaQueryListEvent) => void);
 
       return () => {
-        if (mq.removeEventListener) mq.removeEventListener('change', handleChange as EventListener);
+        if (mq.removeEventListener) mq.removeEventListener('change', handleChange);
         else mq.removeListener(handleChange as (e: MediaQueryListEvent) => void);
       };
     }
