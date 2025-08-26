@@ -79,6 +79,14 @@ docker run -p 5173:5173 jd-portfolio
 
 ## 🔧 Development Notes
 
+### Theme / Dark Mode
+
+The app now defaults to the user's OS color scheme (via prefers-color-scheme). If a user toggles the theme in the UI, that choice is saved in localStorage and will override the system preference on subsequent visits. To clear a stored preference, remove the `theme-preference` key from localStorage in the browser console:
+
+```js
+localStorage.removeItem('theme-preference')
+```
+
 ### ESLint Configuration
 
 TypeScript ESLint is used with recommended rules. For stricter linting, expand your config in `eslint.config.js` as needed.
