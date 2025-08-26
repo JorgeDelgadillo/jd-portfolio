@@ -1,7 +1,30 @@
 import { useTheme } from '../../ThemeContext';
+import { useState, useRef, useEffect } from 'react';
 
 const Hero = () => {
   const { darkMode } = useTheme();
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (menuRef.current && e.target && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    }
+
+    function handleEsc(e: KeyboardEvent) {
+      if (e.key === 'Escape') setMenuOpen(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEsc);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEsc);
+    };
+  }, []);
 
   const technologies = [
     { name: 'React', icon: '⚛️' },
@@ -60,16 +83,49 @@ const Hero = () => {
               View My Work
             </a>
 
-            <a
-              href="mailto:jorgdelgadillo@gmail.com"
-              className={`px-8 py-3 border-2 rounded-lg font-semibold transition-colors ${
-                darkMode 
-                  ? 'border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white' 
-                  : 'border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
-              }`}
-            >
-              Get In Touch
-            </a>
+            <div className="relative" ref={menuRef}>
+              <button
+                onClick={() => setMenuOpen((s) => !s)}
+                className={`px-8 py-3 border-2 rounded-lg font-semibold transition-colors flex items-center gap-2 ${
+                  darkMode
+                    ? 'border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white'
+                    : 'border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
+                }`}
+                aria-haspopup="menu"
+                aria-expanded={menuOpen}
+              >
+                Get In Touch
+                <span className="text-sm opacity-75">{menuOpen ? '▲' : '▼'}</span>
+              </button>
+
+              {menuOpen && (
+                <div
+                  className={`absolute mt-2 right-0 w-56 rounded-lg shadow-lg z-50 py-2 ${
+                    darkMode ? 'bg-slate-800 text-gray-100' : 'bg-white text-gray-900'
+                  }`}
+                  role="menu"
+                >
+                  <a
+                    href="mailto:jorgdelgadillo@gmail.com"
+                    className={`block px-4 py-2 text-sm hover:underline ${darkMode ? 'hover:bg-slate-700' : 'hover:bg-gray-100'}`}
+                    role="menuitem"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Send Email
+                  </a>
+                  <a
+                    href="https://calendly.com/jorgdelgadillo/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block px-4 py-2 text-sm hover:underline ${darkMode ? 'hover:bg-slate-700' : 'hover:bg-gray-100'}`}
+                    role="menuitem"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Schedule a Meeting
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Technologies */}
