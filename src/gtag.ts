@@ -2,7 +2,18 @@
 export const GA_ID = (import.meta.env.VITE_GA_ID as string) || undefined;
 
 declare global {
-  interface Window { dataLayer?: any[]; gtag?: (...args: any[]) => void; }
+  interface Window {
+    /**
+     * Google Analytics dataLayer is an array of objects pushed for tracking.
+     * See: https://developers.google.com/tag-platform/devguides/datalayer
+     */
+    dataLayer?: Array<Record<string, any>>;
+    /**
+     * gtag function signature based on Google Analytics documentation.
+     * See: https://developers.google.com/tag-platform/devguides/gtag
+     */
+    gtag?: (command: string, ...args: any[]) => void;
+  }
 }
 
 export function loadGtag() {
