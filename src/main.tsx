@@ -15,13 +15,13 @@ window.addEventListener('hashchange', () => pageview())
 window.addEventListener('popstate', () => pageview())
 
 ;(function() {
+  type HistoryStateMethod = (data: any, unused: string, url?: string | null) => void
   const wrap = (fnName: 'pushState' | 'replaceState') => {
-    const orig = (history as any)[fnName] as Function
-    ;(history as any)[fnName] = function (...args: any[]) {
-      const result = orig.apply(this, args)
+    const orig = history[fnName] as HistoryStateMethod
+    history[fnName] = function (data: any, unused: string, url?: string | null) {
+      orig.apply(this, [data, unused, url])
       window.dispatchEvent(new Event('locationchange'))
-      return result
-    }
+    } as HistoryStateMethod
   }
   wrap('pushState')
   wrap('replaceState')
