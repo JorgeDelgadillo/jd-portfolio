@@ -7,12 +7,25 @@ import { loadGtag, pageview } from './gtag'
 
 // Initialize Google Analytics (if VITE_GA_ID is set)
 loadGtag()
+console.debug('[GA] loadGtag called', { hasId: Boolean(import.meta.env.VITE_GA_ID) })
 // initial pageview
-pageview()
+{
+  const initialPath = (location.pathname || '/') + (location.search || '') + (location.hash || '')
+  console.debug('[GA] initial pageview dispatch', { path: initialPath })
+  pageview(initialPath)
+}
 
 // SPA navigation tracking: hash changes, history API, and popstate
-window.addEventListener('hashchange', () => pageview())
-window.addEventListener('popstate', () => pageview())
+window.addEventListener('hashchange', () => {
+  const p = (location.pathname || '/') + (location.search || '') + (location.hash || '')
+  console.debug('[GA] hashchange -> pageview', { path: p })
+  pageview(p)
+})
+window.addEventListener('popstate', () => {
+  const p = (location.pathname || '/') + (location.search || '') + (location.hash || '')
+  console.debug('[GA] popstate -> pageview', { path: p })
+  pageview(p)
+})
 
 ;(function() {
   const wrap = (fnName: 'pushState' | 'replaceState') => {
@@ -25,7 +38,11 @@ window.addEventListener('popstate', () => pageview())
   }
   wrap('pushState')
   wrap('replaceState')
-  window.addEventListener('locationchange', () => pageview())
+  window.addEventListener('locationchange', () => {
+    const p = (location.pathname || '/') + (location.search || '') + (location.hash || '')
+    console.debug('[GA] locationchange -> pageview', { path: p })
+    pageview(p)
+  })
 })()
 
 createRoot(document.getElementById('root')!).render(
