@@ -5,11 +5,11 @@
 
 // Flat color utilities (replacing gradients)
 .color-primary {
-  background-color: color(blue-600);
+  background-color: color(green-600);
 }
 
 .text-primary-solid {
-  color: color(blue-700);
+  color: color(green-700);
 }
 
 .color-secondary {
@@ -159,11 +159,11 @@
 // Focus utilities
 .focus-theme {
   &:focus {
-    outline: 2px solid color(blue-500);
+  outline: 2px solid color(green-500);
     outline-offset: 2px;
   }
   
   .dark &:focus {
-    outline-color: color(blue-400);
+  outline-color: color(green-400);
   }
 }
