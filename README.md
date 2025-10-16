@@ -21,7 +21,7 @@ A modern portfolio built with React, TypeScript, and Vite.
 
 2. **Build and run with Docker Compose:**
   ```bash
-  docker-compose up --build
+  VITE_GA_ID=G-XXXXXXX docker-compose up --build
   ```
 
 3. **Access the application:**
@@ -35,7 +35,7 @@ A modern portfolio built with React, TypeScript, and Vite.
 ### Alternative Docker Commands
 
 ```bash
-docker build -t jd-portfolio .
+docker build --build-arg VITE_GA_ID=G-XXXXXXX -t jd-portfolio .
 docker run -p 5173:5173 jd-portfolio
 ```
 
@@ -102,6 +102,8 @@ Build and deploy the Docker image to any Docker-compatible hosting service (AWS 
 ## ⚙️ Environment Variables
 
 The app runs on port 5173 by default. Adjust ports in `docker-compose.yml` or `Dockerfile` as needed.
+
+- `VITE_GA_ID` — Google Analytics Measurement ID (e.g. `G-AAAAAAA`). Provide it at build time so analytics is embedded in the static bundle. For Docker builds use `--build-arg VITE_GA_ID=...` or set the related environment variable before `docker-compose up --build`.
 
 ## 📝 License
 

@@ -5,6 +5,8 @@ services:
       context: .
       dockerfile: Dockerfile
       target: dev
+      args:
+        VITE_GA_ID: ${VITE_GA_ID:-}
     ports:
       - "5173:5173"
     volumes:
@@ -20,12 +22,14 @@ services:
       context: .
       dockerfile: Dockerfile
       target: production
+      args:
+        VITE_GA_ID: ${VITE_GA_ID:-}
     # Expose internal port only; Traefik will route externally via 80/443
     expose:
-      - "8080"
+      - "80"
     environment:
       - NODE_ENV=production
-    command: ["http-server", "./dist", "-p", "8080"]
+    command: ["nginx", "-g", "daemon off;"]
     networks:
       - dokploy-network
     labels:
@@ -35,7 +39,7 @@ services:
       - traefik.http.routers.portfolio.entrypoints=websecure
       - traefik.http.routers.portfolio.tls=true
       - traefik.http.routers.portfolio.tls.certresolver=letsencrypt
-      - traefik.http.services.portfolio.loadbalancer.server.port=8080
+      - traefik.http.services.portfolio.loadbalancer.server.port=80
       # HTTP (80) router that redirects to HTTPS
       - traefik.http.routers.portfolio-http.rule=Host(`jorgedelgadillo.com`,`www.jorgedelgadillo.com`)
       - traefik.http.routers.portfolio-http.entrypoints=web
