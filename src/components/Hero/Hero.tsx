@@ -1,5 +1,17 @@
-import { useTheme } from '../../ThemeContext';
-import { useState, useRef, useEffect } from 'react';
+import { useTheme } from "../../ThemeContext";
+import { useState, useRef, useEffect } from "react";
+import ReactOriginal from "react-devicons/react/original";
+import TypescriptOriginal from "react-devicons/typescript/original";
+import PythonOriginal from "react-devicons/python/original";
+import AndroidOriginal from "react-devicons/android/original";
+import JavascriptOriginal from "react-devicons/javascript/original";
+import AmazonwebservicesOriginalWordmark from "react-devicons/amazonwebservices/original-wordmark";
+import DockerOriginal from "react-devicons/docker/original";
+import DjangoOriginal from "react-devicons/django/plain";
+import PostgresqlOriginal from "react-devicons/postgresql/original";
+import MongoDBOriginal from "react-devicons/mongodb/original";
+import KotlinOriginal from "react-devicons/kotlin/original";
+import SwiftOriginal from "react-devicons/swift/original";
 
 const Hero = () => {
   const { darkMode } = useTheme();
@@ -9,71 +21,76 @@ const Hero = () => {
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (menuRef.current && e.target && !menuRef.current.contains(e.target as Node)) {
+      if (
+        menuRef.current &&
+        e.target &&
+        !menuRef.current.contains(e.target as Node)
+      ) {
         setMenuOpen(false);
       }
     }
 
     function handleEsc(e: KeyboardEvent) {
-      if (e.key === 'Escape') setMenuOpen(false);
+      if (e.key === "Escape") setMenuOpen(false);
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleEsc);
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEsc);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEsc);
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEsc);
     };
   }, []);
 
   const technologies = [
-    { name: 'React', icon: '⚛️' },
-    { name: 'TypeScript', icon: '🔷' },
-    { name: 'Python', icon: '🐍' },
-    { name: 'React Native', icon: '📱' },
-    { name: 'JavaScript', icon: '💛' },
-    { name: 'AWS', icon: '☁️' },
-    { name: 'Docker', icon: '🐳' },
-    { name: 'Django', icon: '🎯' },
-    { name: 'PostgreSQL', icon: '🐘' },
-    { name: 'MongoDB', icon: '🍃' },
-    { name: 'Kotlin', icon: '🟠' },
-    { name: 'Swift', icon: '🧡' }
+    { name: "React", icon: <ReactOriginal /> },
+    { name: "TypeScript", icon: <TypescriptOriginal /> },
+    { name: "Python", icon: <PythonOriginal /> },
+    { name: "React Native", icon: <AndroidOriginal /> },
+    { name: "JavaScript", icon: <JavascriptOriginal /> },
+    { name: "AWS", icon: <AmazonwebservicesOriginalWordmark /> },
+    { name: "Docker", icon: <DockerOriginal /> },
+    { name: "Django", icon: <DjangoOriginal /> },
+    { name: "PostgreSQL", icon: <PostgresqlOriginal /> },
+    { name: "MongoDB", icon: <MongoDBOriginal /> },
+    { name: "Kotlin", icon: <KotlinOriginal /> },
+    { name: "Swift", icon: <SwiftOriginal /> },
   ];
 
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       className={`min-h-screen flex items-center justify-center px-6 py-20 ${
-        darkMode ? 'bg-black text-white' : 'bg-white text-gray-900'
+        darkMode ? "bg-black text-white" : "bg-white text-gray-900"
       }`}
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Hi, I'm{' '}
-            <span className={`${
-              darkMode 
-                ? 'text-blue-400' 
-                : 'text-blue-600'
-            }`}>
+            Hi, I'm{" "}
+            <span className={`${darkMode ? "text-blue-400" : "text-blue-600"}`}>
               Jorge Delgadillo
             </span>
           </h1>
-          <p className={`text-xl md:text-2xl ${
-            darkMode ? 'text-gray-300' : 'text-gray-600'
-          }`}>
+          <p
+            className={`text-xl md:text-2xl ${
+              darkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
             Software Engineer – Fullstack (React, Python, AWS)
           </p>
-          <p className={`text-lg max-w-lg ${
-            darkMode ? 'text-gray-400' : 'text-gray-500'
-          }`}>
-            Versatile and detail-oriented Fullstack Software Engineer with over 5 years of experience 
-            in startups and international environments. Passionate about building scalable systems, 
-            automation, and delivering impactful user experiences.
+          <p
+            className={`text-lg max-w-lg ${
+              darkMode ? "text-gray-400" : "text-gray-500"
+            }`}
+          >
+            Versatile and detail-oriented Fullstack Software Engineer with over
+            5 years of experience in startups and international environments.
+            Passionate about building scalable systems, automation, and
+            delivering impactful user experiences.
           </p>
-          
+
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 pt-4">
             <a
@@ -88,26 +105,30 @@ const Hero = () => {
                 onClick={() => setMenuOpen((s) => !s)}
                 className={`px-8 py-3 border-2 rounded-lg font-semibold transition-colors flex items-center gap-2 ${
                   darkMode
-                    ? 'border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white'
-                    : 'border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
+                    ? "border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white"
+                    : "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
                 }`}
                 aria-haspopup="menu"
                 aria-expanded={menuOpen}
               >
                 Get In Touch
-                <span className="text-sm opacity-75">{menuOpen ? '▲' : '▼'}</span>
+                <span className="text-sm opacity-75">
+                  {menuOpen ? "▲" : "▼"}
+                </span>
               </button>
 
               {menuOpen && (
                 <div
                   className={`absolute mt-2 right-0 w-56 rounded-lg shadow-lg z-50 py-2 ${
-                    darkMode ? 'bg-slate-800 text-gray-100' : 'bg-white text-gray-900'
+                    darkMode
+                      ? "bg-slate-800 text-gray-100"
+                      : "bg-white text-gray-900"
                   }`}
                   role="menu"
                 >
                   <a
                     href="mailto:jorgdelgadillo@gmail.com"
-                    className={`block px-4 py-2 text-sm hover:underline ${darkMode ? 'hover:bg-slate-700' : 'hover:bg-gray-100'}`}
+                    className={`block px-4 py-2 text-sm hover:underline ${darkMode ? "hover:bg-slate-700" : "hover:bg-gray-100"}`}
                     role="menuitem"
                     onClick={() => setMenuOpen(false)}
                   >
@@ -117,7 +138,7 @@ const Hero = () => {
                     href="https://calendly.com/jorgdelgadillo/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`block px-4 py-2 text-sm hover:underline ${darkMode ? 'hover:bg-slate-700' : 'hover:bg-gray-100'}`}
+                    className={`block px-4 py-2 text-sm hover:underline ${darkMode ? "hover:bg-slate-700" : "hover:bg-gray-100"}`}
                     role="menuitem"
                     onClick={() => setMenuOpen(false)}
                   >
@@ -130,9 +151,11 @@ const Hero = () => {
 
           {/* Technologies */}
           <div className="pt-8">
-            <h3 className={`text-lg font-semibold mb-4 ${
-              darkMode ? 'text-gray-300' : 'text-gray-700'
-            }`}>
+            <h3
+              className={`text-lg font-semibold mb-4 ${
+                darkMode ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
               Technologies I Work With
             </h3>
             <div className="flex flex-wrap gap-3">
@@ -140,9 +163,9 @@ const Hero = () => {
                 <div
                   key={tech.name}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-transform ${
-                    darkMode 
-                      ? 'bg-slate-800 text-gray-200 border border-slate-700' 
-                      : 'bg-gray-100 text-gray-700 border border-gray-200'
+                    darkMode
+                      ? "bg-slate-800 text-gray-200 border border-slate-700"
+                      : "bg-gray-100 text-gray-700 border border-gray-200"
                   }`}
                 >
                   <span>{tech.icon}</span>
@@ -156,9 +179,11 @@ const Hero = () => {
         {/* Photo/Avatar */}
         <div className="flex justify-center lg:justify-end">
           <div className="relative">
-            <div className={`w-80 h-80 rounded-full overflow-hidden shadow-2xl ${
-              darkMode ? 'ring-4 ring-slate-700' : 'ring-4 ring-gray-200'
-            }`}>
+            <div
+              className={`w-80 h-80 rounded-full overflow-hidden shadow-2xl ${
+                darkMode ? "ring-4 ring-slate-700" : "ring-4 ring-gray-200"
+              }`}
+            >
               <img
                 src="/avatar.jpg" // Replace with your avatar image path
                 alt="Jorge Delgadillo"
@@ -167,9 +192,11 @@ const Hero = () => {
             </div>
             {/* Decorative elements */}
             <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full animate-pulse bg-blue-500"></div>
-            <div className={`absolute -bottom-4 -left-4 w-6 h-6 rounded-full animate-pulse delay-300 ${
-              darkMode ? 'bg-blue-400' : 'bg-purple-500'
-            }`}></div>
+            <div
+              className={`absolute -bottom-4 -left-4 w-6 h-6 rounded-full animate-pulse delay-300 ${
+                darkMode ? "bg-blue-400" : "bg-purple-500"
+              }`}
+            ></div>
           </div>
         </div>
       </div>
