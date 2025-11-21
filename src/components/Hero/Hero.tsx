@@ -60,9 +60,8 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className={`min-h-screen flex items-center justify-center px-6 py-20 ${
-        darkMode ? "bg-black text-white" : "bg-white text-gray-900"
-      }`}
+      className={`min-h-screen flex items-center justify-center px-6 py-20 ${darkMode ? "bg-black text-white" : "bg-white text-gray-900"
+        }`}
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
@@ -74,16 +73,14 @@ const Hero = () => {
             </span>
           </h1>
           <p
-            className={`text-xl md:text-2xl ${
-              darkMode ? "text-gray-300" : "text-gray-600"
-            }`}
+            className={`text-xl md:text-2xl ${darkMode ? "text-gray-300" : "text-gray-600"
+              }`}
           >
             Software Engineer – Fullstack (React, Python, AWS)
           </p>
           <p
-            className={`text-lg max-w-lg ${
-              darkMode ? "text-gray-400" : "text-gray-500"
-            }`}
+            className={`text-lg max-w-lg ${darkMode ? "text-gray-400" : "text-gray-500"
+              }`}
           >
             Versatile and detail-oriented Fullstack Software Engineer with over
             5 years of experience in startups and international environments.
@@ -103,11 +100,10 @@ const Hero = () => {
             <div className="relative" ref={menuRef}>
               <button
                 onClick={() => setMenuOpen((s) => !s)}
-                className={`px-8 py-3 border-2 rounded-lg font-semibold transition-colors flex items-center gap-2 ${
-                  darkMode
-                    ? "border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white"
-                    : "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-                }`}
+                className={`px-8 py-3 border-2 rounded-lg font-semibold transition-colors flex items-center gap-2 ${darkMode
+                  ? "border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white"
+                  : "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                  }`}
                 aria-haspopup="menu"
                 aria-expanded={menuOpen}
               >
@@ -119,11 +115,10 @@ const Hero = () => {
 
               {menuOpen && (
                 <div
-                  className={`absolute mt-2 right-0 w-56 rounded-lg shadow-lg z-50 py-2 ${
-                    darkMode
-                      ? "bg-slate-800 text-gray-100"
-                      : "bg-white text-gray-900"
-                  }`}
+                  className={`absolute mt-2 right-0 w-56 rounded-lg shadow-lg z-50 py-2 ${darkMode
+                    ? "bg-slate-800 text-gray-100"
+                    : "bg-white text-gray-900"
+                    }`}
                   role="menu"
                 >
                   <a
@@ -152,9 +147,8 @@ const Hero = () => {
           {/* Technologies */}
           <div className="pt-8">
             <h3
-              className={`text-lg font-semibold mb-4 ${
-                darkMode ? "text-gray-300" : "text-gray-700"
-              }`}
+              className={`text-lg font-semibold mb-4 ${darkMode ? "text-gray-300" : "text-gray-700"
+                }`}
             >
               Technologies I Work With
             </h3>
@@ -162,11 +156,10 @@ const Hero = () => {
               {technologies.map((tech) => (
                 <div
                   key={tech.name}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-transform ${
-                    darkMode
-                      ? "bg-slate-800 text-gray-200 border border-slate-700"
-                      : "bg-gray-100 text-gray-700 border border-gray-200"
-                  }`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-transform ${darkMode
+                    ? "bg-slate-800 text-gray-200 border border-slate-700"
+                    : "bg-gray-100 text-gray-700 border border-gray-200"
+                    }`}
                 >
                   <span>{tech.icon}</span>
                   <span>{tech.name}</span>
@@ -180,9 +173,8 @@ const Hero = () => {
         <div className="flex justify-center lg:justify-end">
           <div className="relative">
             <div
-              className={`w-80 h-80 rounded-full overflow-hidden shadow-2xl ${
-                darkMode ? "ring-4 ring-slate-700" : "ring-4 ring-gray-200"
-              }`}
+              className={`w-80 h-80 rounded-full overflow-hidden shadow-2xl ${darkMode ? "ring-4 ring-slate-700" : "ring-4 ring-gray-200"
+                }`}
             >
               <img
                 src="/avatar.jpg" // Replace with your avatar image path
@@ -193,9 +185,8 @@ const Hero = () => {
             {/* Decorative elements */}
             <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full animate-pulse bg-blue-500"></div>
             <div
-              className={`absolute -bottom-4 -left-4 w-6 h-6 rounded-full animate-pulse delay-300 ${
-                darkMode ? "bg-blue-400" : "bg-purple-500"
-              }`}
+              className={`absolute -bottom-4 -left-4 w-6 h-6 rounded-full animate-pulse delay-300 ${darkMode ? "bg-blue-400" : "bg-purple-500"
+                }`}
             ></div>
           </div>
         </div>
