@@ -24,7 +24,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
       if (stored === 'dark' || stored === 'light' || stored === 'system') return stored as 'system' | 'dark' | 'light';
-    } catch (e) {
+    } catch {
       // localStorage may be unavailable in some environments
     }
 
@@ -79,7 +79,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
         const next = systemDark ? 'light' : 'dark';
         try {
           window.localStorage.setItem(STORAGE_KEY, next);
-        } catch (e) {
+        } catch {
           // ignore
         }
         return next;
@@ -88,7 +88,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       const next = prev === 'dark' ? 'light' : 'dark';
       try {
         window.localStorage.setItem(STORAGE_KEY, next);
-      } catch (e) {
+      } catch {
         // ignore
       }
       return next;
