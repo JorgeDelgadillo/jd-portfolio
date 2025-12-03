@@ -15,7 +15,6 @@ interface Project {
 const FeaturedProjects = () => {
   const { darkMode } = useTheme();
 
-  // Projects data - add or remove projects as needed
   const projects: Project[] = [
     {
       id: "1",
@@ -32,9 +31,22 @@ const FeaturedProjects = () => {
       ],
       link: "https://github.com/JorgeDelgadillo/jd-portfolio",
     },
+    {
+      id: "2",
+      title: "LazyWhats",
+      description:
+        "A WhatsApp Terminal User Interface (TUI) client with Vim-style keybindings. Features QR code authentication, real-time messaging, and smart notifications—all from your terminal.",
+      image: "/lazywhats.png",
+      technologies: [
+        { name: "TypeScript", color: "bg-purple-100 text-purple-800" },
+        { name: "Node.js", color: "bg-green-100 text-green-800" },
+        { name: "Docker", color: "bg-cyan-100 text-cyan-800" },
+        { name: "Blessed", color: "bg-indigo-100 text-indigo-800" },
+      ],
+      link: "https://github.com/JorgeDelgadillo/lazywhats",
+    },
   ];
 
-  // Always render 3 cards
   const cards = Array.from({ length: 3 }, (_, index) => {
     const project = projects[index];
     return { project, index };
@@ -70,7 +82,6 @@ const FeaturedProjects = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
             {cards.map(({ project, index }) =>
               project ? (
-                // Actual Project Card
                 <div
                   key={project.id}
                   className={`p-6 rounded-lg border-2 hover:border-blue-500 transition-colors ${
@@ -116,7 +127,6 @@ const FeaturedProjects = () => {
                   </a>
                 </div>
               ) : (
-                // Placeholder Card
                 <div
                   key={`placeholder-${index}`}
                   className={`p-6 rounded-lg border-2 border-dashed hover:border-blue-500 transition-colors ${
