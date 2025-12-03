@@ -10,7 +10,7 @@ interface Project {
     color: string;
   }>;
   link: string;
-}
+};
 
 const FeaturedProjects = () => {
   const { darkMode } = useTheme();
