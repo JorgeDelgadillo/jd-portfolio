@@ -6,8 +6,8 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  pnpm-checks:
-    name: PNPM Build & Lint
+  npm-checks:
+    name: NPM Build & Lint
     runs-on: ubuntu-latest
 
     steps:
@@ -17,38 +17,27 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: "22"
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: Setup pnpm cache
+      - name: Setup npm cache
         uses: actions/cache@v4
         with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/package.json') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+            ${{ runner.os }}-npm-
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: npm ci
 
       - name: Run ESLint
-        run: pnpm run lint
+        run: npm run lint
 
       - name: Type check
         run: npx tsc --noEmit
 
       - name: Build project
-        run: pnpm run build
+        run: npm run build
 
   docker-build:
     name: Docker Build
@@ -90,15 +79,15 @@ jobs:
   status-check:
     name: All Checks Passed
     runs-on: ubuntu-latest
-    needs: [pnpm-checks, docker-build]
+    needs: [npm-checks, docker-build]
     if: always()
 
     steps:
       - name: Check if all jobs succeeded
         run: |
-          if [[ "${{ needs.pnpm-checks.result }}" != "success" ]] || [[ "${{ needs.docker-build.result }}" != "success" ]]; then
+          if [[ "${{ needs.npm-checks.result }}" != "success" ]] || [[ "${{ needs.docker-build.result }}" != "success" ]]; then
             echo "One or more checks failed!"
-            echo "PNPM checks: ${{ needs.pnpm-checks.result }}"
+            echo "NPM checks: ${{ needs.npm-checks.result }}"
             echo "Docker build: ${{ needs.docker-build.result }}"
             exit 1
           fi
