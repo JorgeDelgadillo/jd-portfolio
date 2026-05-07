@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/jd-logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jorge Delgadillo | Software Engineer</title>
+
+    <!-- Primary SEO -->
+    <meta name="description" content="Jorge Delgadillo is a Fullstack Software Engineer with 5+ years of experience in React, TypeScript, Python, and AWS. Explore my projects, experience, and contact information." />
+    <meta name="author" content="Jorge Delgadillo" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://jorgedelgadillo.com/" />
+
+    <!-- Manifest & Theming -->
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#1e1e2e" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Jorge Delgadillo — Portfolio" />
+    <meta property="og:title" content="Jorge Delgadillo | Software Engineer" />
+    <meta property="og:description" content="Fullstack Software Engineer with 5+ years of experience in React, TypeScript, Python, and AWS." />
+    <meta property="og:url" content="https://jorgedelgadillo.com/" />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Jorge Delgadillo - Software Engineer Portfolio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@KrJorgeD" />
+    <meta name="twitter:creator" content="@KrJorgeD" />
+    <meta name="twitter:title" content="Jorge Delgadillo | Software Engineer" />
+    <meta name="twitter:description" content="Fullstack Software Engineer with 5+ years of experience in React, TypeScript, Python, and AWS." />
+    <meta name="twitter:image" content="/og-image.jpg" />
+
+    <!-- Structured Data (Person) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "givenName": "Jorge",
+        "familyName": "Delgadillo",
+        "name": "Jorge Delgadillo",
+        "jobTitle": "Software Engineer",
+        "description": "Fullstack Software Engineer with 5+ years of experience in React, TypeScript, Python, AWS, and scalable systems.",
+        "url": "https://jorgedelgadillo.com/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://jorgedelgadillo.com/avatar.jpg",
+          "width": 800,
+          "height": 800
+        },
+        "knowsAbout": [
+          "React",
+          "TypeScript",
+          "JavaScript",
+          "Python",
+          "AWS",
+          "Node.js",
+          "Docker",
+          "PostgreSQL",
+          "MongoDB",
+          "React Native",
+          "Django",
+          "GraphQL"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance"
+        },
+        "homeLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Querétaro",
+            "addressCountry": "Mexico"
+          }
+        },
+        "sameAs": [
+          "https://github.com/JorgeDelgadillo",
+          "https://www.linkedin.com/in/jorge-delgadillo/",
+          "https://x.com/KrJorgeD"
+        ]
+      }
+    </script>
+
+    <!-- Robots control -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Hydrate absolute URLs at runtime -->
+    <script>
+      (function() {
+        try {
+          var origin = window.location.origin;
+          var abs = function(path) { return path.startsWith('http') ? path : origin + path; };
+          var link = document.querySelector('link[rel="canonical"]');
+          if (link && (/https:\/\/jorgedelgadillo.com\//.test(link.href) || !/^https?:\/\//.test(link.href))) {
+            link.href = origin + '/';
+          }
+          var ogUrl = document.querySelector('meta[property="og:url"]');
+          if (ogUrl && (/https:\/\/jorgedelgadillo.com\//.test(ogUrl.content) || !/^https?:\/\//.test(ogUrl.content))) {
+            ogUrl.setAttribute('content', origin + '/');
+          }
+          ['meta[property="og:image"]', 'meta[name="twitter:image"]'].forEach(function(sel) {
+            var m = document.querySelector(sel);
+            if (m && !/^https?:\/\//.test(m.content)) {
+              m.setAttribute('content', abs(m.content));
+            }
+          });
+          var ld = document.querySelector('script[type="application/ld+json"]');
+          if (ld) {
+            var data = JSON.parse(ld.textContent || '{}');
+            if (data && data['@type'] === 'Person') {
+              if (!data.url || /https:\/\/jorgedelgadillo.com\//.test(data.url)) data.url = origin + '/';
+              if (!data.image || /https:\/\/jorgedelgadillo.com\/.+/.test(data.image) || !/^https?:\/\//.test(data.image)) data.image = origin + '/avatar.jpg';
+              ld.textContent = JSON.stringify(data);
+            }
+          }
+        } catch (e) { /* no-op */ }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+    <noscript>
+      <div style="padding:1rem; text-align:center; font-family:system-ui, -apple-system, Segoe UI, Roboto, sans-serif;">
+        This site works best with JavaScript enabled.
+      </div>
+    </noscript>
+  </body>
+</html>
