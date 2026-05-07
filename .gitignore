@@ -12,6 +12,7 @@ internal_docs
 dist
 dist-ssr
 *.local
+.plan/*
 
 # Ignore environment files
 .env*
