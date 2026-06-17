@@ -1,70 +1,42 @@
-// Global styles and color variables
+// Vintage minimalist global container styles
 
-// Base color palette
-$night: #00120bff;
-$night-gradient: #061947; // replaced gradient with a solid dark blue
-$dark-slate-gray: #35605aff;
-$slate-gray: #6b818cff;
-$lavender-web: #d8e4ffff;
-$spring-green: #31e981ff;
-$white: #ffffff;
-$black: #000000;
-$light-gray: #f0f0f0;
-$medium-gray: #cccccc;
-$lighter-gray: #e0e0e0;
-$light-green: #a0e0a0;
-$blue: #007bff;
-$light-gradient: #ffffff; // replaced gradient with solid white
-
-// Default theme colors
-$primary-color: $night;
-$secondary-color: $dark-slate-gray;
-$accent-color: $slate-gray;
-$background-color: $white;
-$highlight-color: $spring-green;
-
-:root {
-  font-family: 'JetBrains Mono', monospace;
+// Light (parchment) theme tokens
+.app-container.light-mode {
+  --v-bg: #f4ede0;
+  --v-surface: #faf6ec;
+  --v-elevated: #ede2cc;
+  --v-text: #2b2520;
+  --v-text-soft: #5a4f42;
+  --v-text-muted: #8a7c6a;
+  --v-accent: #8b6f47;
+  --v-accent-2: #5c7a6f;
+  --v-hairline: rgba(43, 37, 32, 0.12);
 }
 
-// Dark Mode Theme Variables
-.dark-mode {
-  --primary-color: #{$night};
-  --secondary-color: #{$dark-slate-gray};
-  --accent-color: #{$slate-gray};
-  --background-color: #{$night};
-  --highlight-color: #{$spring-green};
-  --text-color: #{$white};
-  --link-color: #{$spring-green};
-  --border-color: #{$slate-gray};
-  --shadow-color: rgba(0, 0, 0, 0.5);
+// Dark (espresso) theme tokens
+.app-container.dark-mode {
+  --v-bg: #1c1611;
+  --v-surface: #241c15;
+  --v-elevated: #2e241a;
+  --v-text: #ece3d0;
+  --v-text-soft: #c9bca6;
+  --v-text-muted: #9a8d76;
+  --v-accent: #c9a45c;
+  --v-accent-2: #7d9b8e;
+  --v-hairline: rgba(236, 227, 208, 0.12);
 }
 
-// Light Mode Theme Variables
-.light-mode {
-  --primary-color: #{$white};
-  --secondary-color: #{$light-gray};
-  --accent-color: #{$medium-gray};
-  --background-color: #{$white};
-  --highlight-color: #{$light-green};
-  --text-color: #{$black};
-  --link-color: #{$blue};
-  --border-color: #{$medium-gray};
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
-
-// Container styles
 .app-container {
   min-height: 100vh;
   width: 100vw;
-  background: var(--background-color);
-  color: var(--text-color);
-  transition: background 0.3s, color 0.3s;
+  background: var(--v-bg);
+  color: var(--v-text);
+  transition: background 0.4s ease, color 0.4s ease;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  font-feature-settings: "ss01", "cv11";
 }
 
-// Theme toggle button
 .theme-toggle-button {
   position: absolute;
   top: 1rem;

@@ -4,105 +4,238 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/jd-logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jorge Delgadillo — Fullstack Software Engineer (React, Python, AWS)</title>
 
     <!-- Primary SEO -->
-    <meta name="description" content="Portfolio of Jorge Delgadillo, a Fullstack Software Engineer specializing in React, TypeScript, Python, AWS, and scalable systems. Explore experience, projects, and resume." />
+    <title>Jorge Delgadillo — Fullstack Software Engineer (React, Python, AWS)</title>
+    <meta
+      name="description"
+      content="Jorge Delgadillo is a Fullstack Software Engineer with 5+ years of experience in React, TypeScript, Python, AWS, payments infrastructure (Stripe, Hyperwallet), and AI automation. Based in Querétaro, Mexico. View experience, projects, and résumé."
+    />
     <meta name="author" content="Jorge Delgadillo" />
-  <!-- Will be replaced at build using Vite env; JS fallback below ensures correctness locally -->
-      <!-- JetBrains Mono font import -->
-      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://jorgedelgadillo.com/" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="googlebot" content="index, follow" />
+
+    <!-- Geo / local entity hints -->
+    <meta name="geo.region" content="MX-QRO" />
+    <meta name="geo.placename" content="Querétaro, Mexico" />
+
+    <!-- Fonts: Fraunces (display serif) + Inter (sans body) + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Canonical & identity links -->
+    <link rel="canonical" href="https://jorgedelgadillo.com/" />
+    <link rel="me" href="https://github.com/JorgeDelgadillo" />
+    <link rel="me" href="https://www.linkedin.com/in/jorge-delgadillo/" />
+    <link rel="me" href="https://x.com/KrJorgeD" />
+    <link rel="me" href="mailto:jorgdelgadillo@gmail.com" />
 
     <!-- Manifest & Theming -->
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#0b1120" />
+    <meta name="theme-color" content="#f4ede0" />
+    <meta name="color-scheme" content="light dark" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <!-- Open Graph (profile) -->
+    <meta property="og:type" content="profile" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Jorge Delgadillo — Portfolio" />
     <meta property="og:title" content="Jorge Delgadillo — Fullstack Software Engineer" />
-    <meta property="og:description" content="Fullstack Software Engineer with 5+ years of experience. React, TypeScript, Python, AWS, mobile, and payments infrastructure." />
-  <meta property="og:url" content="https://jorgedelgadillo.com/" />
+    <meta
+      property="og:description"
+      content="Fullstack Software Engineer with 5+ years of experience. React, TypeScript, Python, AWS, payments infrastructure, and AI automation. Based in Querétaro, Mexico."
+    />
+    <meta property="og:url" content="https://jorgedelgadillo.com/" />
     <meta property="og:image" content="/avatar.jpg" />
     <meta property="og:image:alt" content="Portrait of Jorge Delgadillo" />
+    <meta property="profile:first_name" content="Jorge" />
+    <meta property="profile:last_name" content="Delgadillo" />
+    <meta property="profile:username" content="jorgedelgadillo" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@KrJorgeD" />
     <meta name="twitter:creator" content="@KrJorgeD" />
     <meta name="twitter:title" content="Jorge Delgadillo — Fullstack Software Engineer" />
-    <meta name="twitter:description" content="React, TypeScript, Python, AWS. Projects, experience, and contact." />
+    <meta
+      name="twitter:description"
+      content="React, TypeScript, Python, AWS. Payments infrastructure, AI automation, and mobile. Experience, projects, and contact."
+    />
     <meta name="twitter:image" content="/avatar.jpg" />
 
-    <!-- Structured Data (Person) -->
+    <!-- Structured Data: Person + WebSite + ProfilePage (linked @graph) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Jorge Delgadillo",
-  "url": "https://jorgedelgadillo.com/",
-  "image": "https://jorgedelgadillo.com/avatar.jpg",
-        "jobTitle": "Software Engineer",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Independent"
-        },
-        "sameAs": [
-          "https://github.com/JorgeDelgadillo",
-          "https://www.linkedin.com/in/jorge-delgadillo/",
-          "https://x.com/KrJorgeD"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://jorgedelgadillo.com/#person",
+            "name": "Jorge Delgadillo",
+            "givenName": "Jorge",
+            "familyName": "Delgadillo",
+            "url": "https://jorgedelgadillo.com/",
+            "image": "https://jorgedelgadillo.com/avatar.jpg",
+            "jobTitle": "Fullstack Software Engineer",
+            "description": "Fullstack Software Engineer with 5+ years of experience specializing in React, TypeScript, Python, AWS, payments infrastructure (Stripe, Hyperwallet), and AI automation (LangChain, n8n). Based in Querétaro, Mexico, working remotely with international teams.",
+            "email": "mailto:jorgdelgadillo@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Querétaro",
+              "addressRegion": "QRO",
+              "addressCountry": "MX"
+            },
+            "nationality": { "@type": "Country", "name": "Mexico" },
+            "knowsAbout": [
+              "React",
+              "TypeScript",
+              "JavaScript",
+              "Python",
+              "Django",
+              "React Native",
+              "Kotlin",
+              "Swift",
+              "Node.js",
+              "AWS",
+              "Docker",
+              "PostgreSQL",
+              "MongoDB",
+              "Stripe",
+              "Hyperwallet",
+              "LangChain",
+              "GraphQL",
+              "Kubernetes",
+              "n8n"
+            ],
+            "sameAs": [
+              "https://github.com/JorgeDelgadillo",
+              "https://www.linkedin.com/in/jorge-delgadillo/",
+              "https://x.com/KrJorgeD"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://jorgedelgadillo.com/#website",
+            "url": "https://jorgedelgadillo.com/",
+            "name": "Jorge Delgadillo — Portfolio",
+            "description": "Portfolio of Jorge Delgadillo, Fullstack Software Engineer (React, TypeScript, Python, AWS).",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://jorgedelgadillo.com/#person" }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://jorgedelgadillo.com/#webpage",
+            "url": "https://jorgedelgadillo.com/",
+            "name": "Jorge Delgadillo — Fullstack Software Engineer",
+            "isPartOf": { "@id": "https://jorgedelgadillo.com/#website" },
+            "about": { "@id": "https://jorgedelgadillo.com/#person" },
+            "mainEntity": { "@id": "https://jorgedelgadillo.com/#person" },
+            "primaryImageOfPage": { "@id": "https://jorgedelgadillo.com/#person" }
+          }
         ]
       }
     </script>
 
-  <!-- Robots control (env-driven) -->
-  <meta name="robots" content="index, follow">
-
-  <!-- Hydrate absolute URLs at runtime (fallback if canonical domain isn't set yet) -->
+    <!-- Hydrate absolute URLs at runtime (fallback if canonical domain isn't set yet) -->
     <script>
-      (function() {
+      (function () {
         try {
           var origin = window.location.origin;
-          var abs = function(path) { return path.startsWith('http') ? path : origin + path; };
+          var abs = function (path) {
+            if (!path) return path;
+            return path.indexOf("http") === 0 ? path : origin + (path.charAt(0) === "/" ? path : "/" + path);
+          };
+          var isPlaceholder = function (s) {
+            return /https:\/\/jorgedelgadillo.com\//.test(s || "") || !/^https?:\/\//.test(s || "");
+          };
+
           // Canonical
           var link = document.querySelector('link[rel="canonical"]');
-          if (link && (/https:\/\/jorgedelgadillo.com\//.test(link.href) || !/^https?:\/\//.test(link.href))) {
-            link.href = origin + '/';
-          }
+          if (link && isPlaceholder(link.getAttribute("href"))) link.href = origin + "/";
+
           // og:url
           var ogUrl = document.querySelector('meta[property="og:url"]');
-          if (ogUrl && (/https:\/\/jorgedelgadillo.com\//.test(ogUrl.content) || !/^https?:\/\//.test(ogUrl.content))) {
-            ogUrl.setAttribute('content', origin + '/');
-          }
+          if (ogUrl && isPlaceholder(ogUrl.getAttribute("content")))
+            ogUrl.setAttribute("content", origin + "/");
+
           // og:image and twitter:image -> ensure absolute
-          ['meta[property="og:image"]', 'meta[name="twitter:image"]'].forEach(function(sel) {
+          ['meta[property="og:image"]', 'meta[name="twitter:image"]'].forEach(function (sel) {
             var m = document.querySelector(sel);
-            if (m && !/^https?:\/\//.test(m.content)) {
-              m.setAttribute('content', abs(m.content));
-            }
+            if (m && !/^https?:\/\//.test(m.content)) m.setAttribute("content", abs(m.content));
           });
-          // JSON-LD url/image
+
+          // JSON-LD: handle @graph or top-level node
           var ld = document.querySelector('script[type="application/ld+json"]');
-      if (ld) {
-            var data = JSON.parse(ld.textContent || '{}');
-            if (data && data['@type'] === 'Person') {
-  if (!data.url || /https:\/\/jorgedelgadillo.com\//.test(data.url)) data.url = origin + '/';
-  if (!data.image || /https:\/\/jorgedelgadillo.com\/.+/.test(data.image) || !/^https?:\/\//.test(data.image)) data.image = origin + '/avatar.jpg';
-              ld.textContent = JSON.stringify(data);
-            }
+          if (ld) {
+            var data = JSON.parse(ld.textContent || "{}");
+            var nodes = data["@graph"] ? data["@graph"] : [data];
+            nodes.forEach(function (n) {
+              if (!n || !n["@type"]) return;
+              var t = n["@type"];
+              if (t === "Person" || t === "WebSite" || t === "ProfilePage" || t === "WebPage") {
+                if (isPlaceholder(n.url)) n.url = origin + "/";
+              }
+              if (t === "Person" && isPlaceholder(n.image)) n.image = origin + "/avatar.jpg";
+            });
+            ld.textContent = JSON.stringify(data);
           }
-        } catch (e) { /* no-op */ }
+        } catch (e) {
+          /* no-op */
+        }
       })();
     </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- SEO safety net: full content snapshot for crawlers that don't execute JS.
+         Google renders JS, but this guarantees the name + bio + experience are
+         present in the initial HTML document. -->
     <noscript>
-      <div style="padding:1rem; text-align:center; font-family:system-ui, -apple-system, Segoe UI, Roboto, sans-serif;">
-        This site works best with JavaScript enabled.
+      <div
+        style="max-width:720px;margin:0 auto;padding:96px 24px;font-family:Georgia,'Times New Roman',serif;color:#2b2520;background:#f4ede0;line-height:1.65;"
+      >
+        <h1 style="font-size:2.5rem;margin:0 0 8px;font-weight:400;">Jorge Delgadillo</h1>
+        <p style="font-size:0.85rem;color:#8b6f47;letter-spacing:0.16em;text-transform:uppercase;margin:0 0 24px;">
+          Fullstack Software Engineer
+        </p>
+        <p style="font-size:1.1rem;">
+          Fullstack Software Engineer with 5+ years of experience specializing in
+          React, TypeScript, Python, and AWS. I build scalable backend systems,
+          payments infrastructure (Stripe, Hyperwallet), cross-platform mobile
+          apps (React Native, Kotlin, Swift), and AI automation (LangChain, n8n).
+          Based in Querétaro, Mexico, working remotely with international teams.
+        </p>
+
+        <h2 style="font-size:1.35rem;margin:32px 0 12px;font-weight:500;">Experience</h2>
+        <ul style="padding-left:1.2em;margin:0;">
+          <li><strong>Software Engineer · Freelance</strong> (Jun 2025 — Present) — Payments infrastructure with Stripe, AI agents with LangChain, automation pipelines in n8n, JS→TS migrations.</li>
+          <li><strong>Software Engineer · Instawork</strong> (Dec 2021 — May 2025) — Critical payments infrastructure (Stripe, Hyperwallet) in Python; native Android/iOS (Kotlin/Swift) integrated with React Native; LangChain AI agents.</li>
+          <li><strong>Fullstack Developer · Stateoftheart.ai</strong> (Aug 2020 — Nov 2021) — Fullstack React features, Dockerized services, AWS infrastructure.</li>
+          <li><strong>Software Developer · Corebooks</strong> (Jan 2019 — Jun 2020) — Cross-platform POS in React Native, web in React, Stripe payments, Odoo ERP modules.</li>
+        </ul>
+
+        <h2 style="font-size:1.35rem;margin:32px 0 12px;font-weight:500;">Skills</h2>
+        <p>
+          Python, TypeScript, JavaScript, Kotlin, Swift, React, React Native,
+          Django, AWS (EC2, S3, KMS), Docker, PostgreSQL, MongoDB, Stripe,
+          Hyperwallet, LangChain, GraphQL, Kubernetes, n8n, Jest, Pytest.
+        </p>
+
+        <h2 style="font-size:1.35rem;margin:32px 0 12px;font-weight:500;">Contact</h2>
+        <p>
+          Email: <a href="mailto:jorgdelgadillo@gmail.com">jorgdelgadillo@gmail.com</a><br />
+          GitHub: <a href="https://github.com/JorgeDelgadillo">github.com/JorgeDelgadillo</a><br />
+          LinkedIn: <a href="https://www.linkedin.com/in/jorge-delgadillo/">linkedin.com/in/jorge-delgadillo</a><br />
+          Twitter: <a href="https://x.com/KrJorgeD">x.com/KrJorgeD</a>
+        </p>
       </div>
     </noscript>
   </body>

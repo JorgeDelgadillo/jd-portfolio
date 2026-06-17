@@ -8,24 +8,16 @@ const Experience = () => {
       id: 0,
       company: "Freelance",
       position: "Software Engineer",
-      period: "Jun 2025 – Present",
-      location: "Querétaro, Mexico (Remote)",
+      period: "Jun 2025 — Present",
+      location: "Querétaro, Mexico · Remote",
       description:
         "Freelance work implementing payment infrastructures, building AI agents, and modernizing client applications and services.",
-      technologies: [
-        "Stripe",
-        "TypeScript",
-        "Python",
-        "React",
-        "LangChain",
-        "n8n",
-      ],
+      technologies: ["Stripe", "TypeScript", "Python", "React", "LangChain", "n8n"],
       achievements: [
-        "Implemented payment infrastructures with Stripe, including subscription flows, webhook security, and multi-platform integration for SaaS and ecommerce clients.",
-        "Built custom AI agents with LangChain to automate data processing, knowledge retrieval, and workflow orchestration for internal operations.",
-        "Designed AI automation pipelines in n8n, integrating LLMs, vector databases, and external APIs to reduce manual work for clients.",
-        "Performed code refactors, including migrating entire projects from JavaScript to TypeScript, improving type safety, maintainability, and reliability.",
-        "Upgraded legacy frontend apps by updating React versions, resolving breaking changes, improving performance, and modernizing tooling.",
+        "Implemented payment infrastructures with Stripe — subscription flows, webhook security, and multi-platform integration for SaaS and ecommerce clients.",
+        "Built custom AI agents with LangChain to automate data processing, knowledge retrieval, and workflow orchestration.",
+        "Designed AI automation pipelines in n8n, integrating LLMs, vector databases, and external APIs to reduce manual work.",
+        "Migrated entire projects from JavaScript to TypeScript and modernized legacy React frontends.",
         "Developed and extended REST APIs and microservices in Python.",
       ],
     },
@@ -33,254 +25,148 @@ const Experience = () => {
       id: 1,
       company: "Instawork",
       position: "Software Engineer",
-      period: "Dec 2021 – May 2025",
-      location: "San Francisco, CA (Remote from Mexico)",
+      period: "Dec 2021 — May 2025",
+      location: "San Francisco, CA · Remote",
       description:
-        "Maintained and supported critical Payments infrastructure using Python (Stripe, Hyperwallet). Built native Android and iOS components and integrated with React Native.",
-      technologies: [
-        "Python",
-        "React Native",
-        "Kotlin",
-        "Swift",
-        "Stripe",
-        "Hyperwallet",
-        "LangChain",
-      ],
+        "Maintained and supported critical Payments infrastructure using Python (Stripe, Hyperwallet). Built native Android and iOS components integrated with React Native.",
+      technologies: ["Python", "React Native", "Kotlin", "Swift", "Stripe", "Hyperwallet", "LangChain"],
       achievements: [
-        "Maintained critical Payments infrastructure using Python (Stripe, Hyperwallet)",
-        "Implemented banking services module including transactions, 2FA, and card support",
-        "Built native Android and iOS components (Kotlin/Swift) integrated with React Native",
-        "Designed custom AI agents with LangChain for internal automation",
-        "Led greenfield projects, refactors, and module removals",
-        "Built end-to-end testing flows with Appium and Browserstack",
+        "Maintained critical Payments infrastructure in Python (Stripe, Hyperwallet).",
+        "Implemented banking services module — transactions, 2FA, and card support.",
+        "Built native Android and iOS components (Kotlin/Swift) integrated with React Native.",
+        "Designed custom AI agents with LangChain for internal automation.",
+        "Led greenfield projects, refactors, and module removals.",
+        "Built end-to-end testing flows with Appium and Browserstack.",
       ],
     },
     {
       id: 2,
       company: "Stateoftheart.ai",
       position: "Fullstack Developer",
-      period: "Aug 2020 – Nov 2021",
+      period: "Aug 2020 — Nov 2021",
       location: "Querétaro, Mexico",
       description:
         "Developed fullstack features for web applications using React. Maintained Dockerized services and basic AWS infrastructure.",
       technologies: ["React", "Docker", "AWS", "TypeScript", "Python"],
       achievements: [
-        "Developed fullstack features for web applications using React",
-        "Maintained Dockerized services and basic AWS infrastructure",
-        "Contributed across frontend/backend layers for fast-paced deployments",
+        "Developed fullstack features for web applications using React.",
+        "Maintained Dockerized services and basic AWS infrastructure.",
+        "Contributed across frontend and backend layers for fast-paced deployments.",
       ],
     },
     {
       id: 3,
       company: "Corebooks",
       position: "Software Developer",
-      period: "Jan 2019 – Jun 2020",
+      period: "Jan 2019 — Jun 2020",
       location: "Celaya, Mexico",
       description:
-        "Built cross-platform mobile point-of-sale system with React Native for mobile and React for web. Integrated Stripe payments and created ERP modules in Odoo.",
+        "Built a cross-platform mobile point-of-sale system with React Native and a web version in React. Integrated Stripe payments and created ERP modules in Odoo.",
       technologies: ["React Native", "React", "Python", "Stripe", "Odoo"],
       achievements: [
-        "Built cross-platform mobile point-of-sale system with React Native",
-        "Developed web version using React",
-        "Integrated Stripe payments for transaction processing",
-        "Created ERP modules in Odoo using Python",
+        "Built cross-platform mobile point-of-sale system with React Native.",
+        "Developed the web version using React.",
+        "Integrated Stripe payments for transaction processing.",
+        "Created ERP modules in Odoo using Python.",
       ],
     },
   ];
 
+  const sectionText = darkMode ? "text-cream" : "text-ink";
+  const bodyText = darkMode ? "text-cream-soft" : "text-ink-soft";
+  const mutedText = darkMode ? "text-cream-muted" : "text-ink-muted";
+  const accent = darkMode ? "text-gold" : "text-sepia";
+  const hairline = darkMode ? "border-hairline-dark" : "border-hairline";
+  const dotColor = darkMode ? "bg-gold" : "bg-sepia";
+
   return (
     <section
       id="experience"
-      className={`py-20 px-6 ${
-        darkMode ? "bg-black text-white" : "bg-white text-gray-900"
-      }`}
+      className={`py-32 md:py-40 px-6 ${darkMode ? "bg-espresso" : "bg-parchment"} transition-colors duration-500`}
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Professional Experience
-          </h2>
-          <p
-            className={`text-lg max-w-2xl mx-auto ${
-              darkMode ? "text-gray-300" : "text-gray-600"
-            }`}
-          >
-            My journey through various roles and companies, building expertise
-            in full-stack development
+      <div className="max-w-5xl mx-auto">
+        {/* Section header */}
+        <div className="mb-20 md:mb-24">
+          <p className={`text-[12px] uppercase tracking-[0.32em] mb-5 ${mutedText}`}>
+            02 — Experience
           </p>
+          <h2 className={`font-serif font-light text-4xl md:text-5xl tracking-[-0.02em] ${sectionText}`}>
+            A timeline of
+            <br />
+            <span className={`italic ${accent}`}>the work so far.</span>
+          </h2>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Timeline line */}
-          <div
-            className={`absolute left-8 top-0 bottom-0 w-0.5 hidden md:block ${
-              darkMode ? "bg-slate-700" : "bg-gray-300"
-            }`}
-          ></div>
+          <div className={`absolute left-0 top-2 bottom-2 w-px ${darkMode ? "bg-hairline-dark" : "bg-hairline"}`} />
 
-          {/* Experience items */}
-          <div className="space-y-12">
+          <div className="space-y-20">
             {experiences.map((exp) => (
-              <div
-                key={exp.id}
-                className="relative flex flex-col md:flex-row gap-8"
-              >
-                {/* Timeline dot */}
-                <div
-                  className={`hidden md:flex absolute left-6 w-4 h-4 rounded-full border-4 z-10 ${
-                    darkMode
-                      ? "bg-blue-600 border-black"
-                      : "bg-blue-600 border-white"
-                  }`}
-                ></div>
+              <div key={exp.id} className="relative pl-10 md:pl-14">
+                {/* Dot */}
+                <span
+                  className={`absolute left-0 top-2.5 w-2 h-2 rounded-full -translate-x-[3px] ${dotColor}`}
+                />
 
-                {/* Content */}
-                <div className="md:ml-20 flex-1">
-                  <div
-                    className={`p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow ${
-                      darkMode
-                        ? "bg-slate-900 border border-slate-800"
-                        : "bg-gray-50 border border-gray-200"
-                    }`}
-                  >
-                    {/* Header */}
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                      <div>
-                        <h3
-                          className={`text-xl font-bold ${
-                            darkMode ? "text-blue-400" : "text-blue-600"
-                          }`}
-                        >
-                          {exp.position}
-                        </h3>
-                        <h4 className="text-lg font-semibold mb-1">
-                          {exp.company}
-                        </h4>
-                        <p
-                          className={`text-sm ${
-                            darkMode ? "text-gray-400" : "text-gray-600"
-                          }`}
-                        >
-                          {exp.location}
-                        </p>
-                      </div>
-                      <div
-                        className={`px-3 py-1 rounded-full text-sm font-medium mt-2 sm:mt-0 self-start ${
-                          darkMode
-                            ? "bg-blue-900 text-blue-200"
-                            : "bg-blue-100 text-blue-800"
-                        }`}
-                      >
-                        {exp.period}
-                      </div>
-                    </div>
-
-                    {/* Description */}
-                    <p
-                      className={`mb-4 leading-relaxed ${
-                        darkMode ? "text-gray-300" : "text-gray-600"
-                      }`}
-                    >
-                      {exp.description}
+                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-8 mb-5">
+                  <div>
+                    <h3 className={`font-serif text-2xl md:text-3xl font-light tracking-[-0.01em] ${sectionText}`}>
+                      {exp.position}
+                    </h3>
+                    <p className={`mt-1 text-sm ${bodyText}`}>
+                      <span className={accent}>{exp.company}</span>
+                      <span className={`mx-2 ${mutedText}`}>·</span>
+                      <span className={mutedText}>{exp.location}</span>
                     </p>
-
-                    {/* Technologies */}
-                    <div className="mb-4">
-                      <h5
-                        className={`font-semibold mb-2 text-sm ${
-                          darkMode ? "text-gray-300" : "text-gray-700"
-                        }`}
-                      >
-                        Technologies Used:
-                      </h5>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className={`px-2 py-1 text-xs rounded ${
-                              darkMode
-                                ? "bg-slate-800 text-gray-200"
-                                : "bg-gray-200 text-gray-700"
-                            }`}
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Achievements */}
-                    <div>
-                      <h5
-                        className={`font-semibold mb-2 text-sm ${
-                          darkMode ? "text-gray-300" : "text-gray-700"
-                        }`}
-                      >
-                        Key Achievements:
-                      </h5>
-                      <ul className="space-y-1">
-                        {exp.achievements.map((achievement, achIndex) => (
-                          <li
-                            key={achIndex}
-                            className={`text-sm flex items-start gap-2 ${
-                              darkMode ? "text-gray-400" : "text-gray-600"
-                            }`}
-                          >
-                            <span
-                              className={`mt-1 ${
-                                darkMode ? "text-blue-400" : "text-blue-600"
-                              }`}
-                            >
-                              •
-                            </span>
-                            {achievement}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
+                  <p className={`text-[12px] uppercase tracking-[0.18em] whitespace-nowrap ${mutedText}`}>
+                    {exp.period}
+                  </p>
                 </div>
+
+                <p className={`text-base md:text-lg font-light leading-relaxed max-w-2xl ${bodyText}`}>
+                  {exp.description}
+                </p>
+
+                {/* Achievements */}
+                <ul className="mt-6 space-y-3 max-w-2xl">
+                  {exp.achievements.map((a, i) => (
+                    <li
+                      key={i}
+                      className={`flex gap-3 text-sm md:text-[15px] font-light leading-relaxed ${bodyText}`}
+                    >
+                      <span className={`mt-2.5 h-px w-4 flex-shrink-0 ${darkMode ? "bg-cream-muted" : "bg-ink-muted"} opacity-50`} />
+                      <span>{a}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Technologies as inline text */}
+                <p className={`mt-6 text-[13px] ${mutedText}`}>
+                  <span className="uppercase tracking-[0.16em]">Stack — </span>
+                  {exp.technologies.join(", ")}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* View Resume CTA */}
-        <div className="text-center mt-16">
-          <p className={`mb-6 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
-            Want to know more about my professional background?
+        {/* Resume CTA */}
+        <div className={`mt-24 pt-10 border-t ${hairline} text-center`}>
+          <p className={`mb-5 text-sm font-light ${bodyText}`}>
+            Want the full picture?
           </p>
           <a
             href="/jorge_delgadillo_resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className={`px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center gap-2 ${
-              darkMode
-                ? "bg-blue-600 text-white hover:bg-blue-700"
-                : "bg-blue-600 text-white hover:bg-blue-700"
-            }`}
+            className={`group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.16em] font-medium transition-colors duration-300 ${accent} ${darkMode ? "hover:text-cream" : "hover:text-ink"}`}
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
-            View Full Resume
+            View full résumé
+            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+              &rarr;
+            </span>
           </a>
         </div>
       </div>
