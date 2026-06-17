@@ -31,6 +31,7 @@ const Header = () => {
   const navHover = darkMode ? "hover:text-cream" : "hover:text-ink";
 
   return (
+    <>
     <header
       className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ${
         scrolled
@@ -117,72 +118,76 @@ const Header = () => {
           />
         </button>
       </div>
-
-      {/* Mobile overlay menu */}
-      <div
-        className={`fixed inset-0 z-50 md:hidden transition-all duration-500 ${
-          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        } ${darkMode ? "bg-espresso" : "bg-parchment"}`}
-      >
-        <div className="flex items-center justify-between px-6 py-5">
-          <span
-            className={`font-serif text-2xl tracking-tight ${darkMode ? "text-cream" : "text-ink"}`}
-          >
-            Jorge<span className="text-sepia dark:text-gold">.</span>
-          </span>
-          <button
-            className={`flex items-center justify-center w-8 h-8 ${darkMode ? "text-cream" : "text-ink"}`}
-            onClick={() => setMenuOpen(false)}
-            aria-label="Close menu"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={1.5}
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-        <nav className="flex flex-col px-6 pt-10 gap-2">
-          {menuItems.map((item, index) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-              className={`font-serif text-4xl tracking-tight py-3 border-b transition-all duration-500 ${
-                darkMode ? "text-cream border-hairline-dark" : "text-ink border-hairline"
-              }`}
-              style={{
-                animation: menuOpen ? `vfade-up 0.6s ${index * 80 + 100}ms both` : "none",
-              }}
-            >
-              {item.name}
-            </a>
-          ))}
-          <button
-            onClick={() => {
-              toggleDarkMode();
-            }}
-            className={`mt-10 flex items-center gap-3 text-[13px] uppercase tracking-[0.18em] ${navColor}`}
-            aria-label="Toggle dark mode"
-          >
-            {darkMode ? "Light Mode" : "Dark Mode"}
-            <span className={`w-9 h-5 rounded-full border relative ${darkMode ? "border-hairline-dark" : "border-hairline"}`}>
-              <span
-                className={`absolute top-[2px] w-3.5 h-3.5 rounded-full transition-all duration-300 ${darkMode ? "left-[2px] bg-gold" : "left-[18px] bg-sepia"}`}
-              />
-            </span>
-          </button>
-        </nav>
-      </div>
     </header>
+
+    {/* Mobile overlay menu — rendered as sibling of <header> so its
+        position:fixed is relative to the viewport, NOT the header's
+        backdrop-filter containing block. */}
+    <div
+      className={`fixed inset-0 z-[60] md:hidden transition-all duration-500 ${
+        menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+      } ${darkMode ? "bg-espresso" : "bg-parchment"}`}
+      aria-hidden={!menuOpen}
+    >
+      <div className="flex items-center justify-between px-6 py-5">
+        <span
+          className={`font-serif text-2xl tracking-tight ${darkMode ? "text-cream" : "text-ink"}`}
+        >
+          Jorge<span className="text-sepia dark:text-gold">.</span>
+        </span>
+        <button
+          className={`flex items-center justify-center w-8 h-8 ${darkMode ? "text-cream" : "text-ink"}`}
+          onClick={() => setMenuOpen(false)}
+          aria-label="Close menu"
+        >
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1.5}
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <nav className="flex flex-col px-6 pt-10 gap-2">
+        {menuItems.map((item, index) => (
+          <a
+            key={item.name}
+            href={item.href}
+            onClick={() => setMenuOpen(false)}
+            className={`font-serif text-4xl tracking-tight py-3 border-b transition-all duration-500 ${
+              darkMode ? "text-cream border-hairline-dark" : "text-ink border-hairline"
+            }`}
+            style={{
+              animation: menuOpen ? `vfade-up 0.6s ${index * 80 + 100}ms both` : "none",
+            }}
+          >
+            {item.name}
+          </a>
+        ))}
+        <button
+          onClick={() => {
+            toggleDarkMode();
+          }}
+          className={`mt-10 flex items-center gap-3 text-[13px] uppercase tracking-[0.18em] ${navColor}`}
+          aria-label="Toggle dark mode"
+        >
+          {darkMode ? "Light Mode" : "Dark Mode"}
+          <span className={`w-9 h-5 rounded-full border relative ${darkMode ? "border-hairline-dark" : "border-hairline"}`}>
+            <span
+              className={`absolute top-[2px] w-3.5 h-3.5 rounded-full transition-all duration-300 ${darkMode ? "left-[2px] bg-gold" : "left-[18px] bg-sepia"}`}
+            />
+          </span>
+        </button>
+      </nav>
+    </div>
+    </>
   );
 };
 
