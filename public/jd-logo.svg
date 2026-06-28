@@ -1,16 +1,16 @@
-<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="32" height="32" rx="6" fill="#1e293b"/>
-  
-  <!-- Border -->
-  <rect x="1" y="1" width="30" height="30" rx="5" fill="none" stroke="#1e40af" stroke-width="1" opacity="0.3"/>
-  
-  <!-- Opening bracket < -->
-  <text x="4" y="21" font-family="'Fira Code', 'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="#60a5fa">&lt;</text>
-  
-  <!-- JD text -->
-  <text x="10" y="21" font-family="'Fira Code', 'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#ffffff">JD</text>
-  
-  <!-- Closing bracket with slash /> -->
-  <text x="20" y="21" font-family="'Fira Code', 'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="#60a5fa">/&gt;</text>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Jorge Delgadillo">
+  <title>Jorge Delgadillo</title>
+  <style>
+    .bg { fill: #f4ede0; }
+    .j { fill: #2b2520; }
+    .dot { fill: #8b6f47; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1c1611; }
+      .j { fill: #ece3d0; }
+      .dot { fill: #c9a45c; }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="8" />
+  <text class="j" x="9" y="23" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="400" font-style="italic">J</text>
+  <circle class="dot" cx="22.5" cy="20.5" r="1.9" />
 </svg>

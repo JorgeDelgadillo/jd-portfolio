@@ -1,1 +1,118 @@
 @import "tailwindcss";
+
+/* Class-based dark mode (driven by ThemeContext -> .dark on <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ----------------------------------------------------------------------------
+   Vintage minimalist design system (Apple-style restraint, vintage palette)
+   ---------------------------------------------------------------------------- */
+@theme {
+  /* Typography */
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Light (parchment) palette */
+  --color-parchment: #f4ede0;
+  --color-parchment-light: #faf6ec;
+  --color-parchment-dark: #ede2cc;
+  --color-ink: #2b2520;
+  --color-ink-soft: #5a4f42;
+  --color-ink-muted: #8a7c6a;
+  --color-sepia: #8b6f47;
+  --color-sepia-light: #a8853d;
+  --color-teal: #5c7a6f;
+  --color-teal-soft: #7d9b8e;
+  --color-burgundy: #7a3b3b;
+  --color-ochre: #b8860b;
+  --color-hairline: rgba(43, 37, 32, 0.12);
+
+  /* Dark (espresso) palette */
+  --color-espresso: #1c1611;
+  --color-espresso-surface: #241c15;
+  --color-espresso-elevated: #2e241a;
+  --color-cream: #ece3d0;
+  --color-cream-soft: #c9bca6;
+  --color-cream-muted: #9a8d76;
+  --color-gold: #c9a45c;
+  --color-hairline-dark: rgba(236, 227, 208, 0.12);
+}
+
+/* ----------------------------------------------------------------------------
+   Base
+   ---------------------------------------------------------------------------- */
+:root {
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-parchment);
+  color: var(--color-ink);
+}
+
+.dark body {
+  background-color: var(--color-espresso);
+  color: var(--color-cream);
+}
+
+::selection {
+  background-color: var(--color-sepia);
+  color: var(--color-parchment-light);
+}
+
+/* Refined, slow scroll for anchor offsets (fixed header) */
+:target {
+  scroll-margin-top: 6rem;
+}
+
+/* Subtle entrance animations */
+@keyframes vfade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes vfade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-vfade-up {
+  animation: vfade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-vfade-in {
+  animation: vfade-in 1.2s ease-out both;
+}
+
+/* Vintage paper grain — extremely subtle */
+.paper-grain {
+  position: relative;
+}
+.paper-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}

@@ -5,12 +5,9 @@ interface Project {
   title: string;
   description: string;
   image: string;
-  technologies: Array<{
-    name: string;
-    color: string;
-  }>;
+  technologies: string[];
   link: string;
-};
+}
 
 const FeaturedProjects = () => {
   const { darkMode } = useTheme();
@@ -20,161 +17,94 @@ const FeaturedProjects = () => {
       id: "1",
       title: "JD Portfolio",
       description:
-        "This website! Built to showcase my skills, experience, and projects. Designed with a modern UI and responsive layout.",
+        "This very site — built to showcase my work, experience, and projects with a restrained, vintage-modern interface and a responsive layout.",
       image: "/screenshot_portfolio.png",
-      technologies: [
-        { name: "React", color: "bg-blue-100 text-blue-800" },
-        { name: "TypeScript", color: "bg-purple-100 text-purple-800" },
-        { name: "Vite", color: "bg-yellow-100 text-yellow-800" },
-        { name: "Tailwind CSS", color: "bg-sky-100 text-sky-800" },
-        { name: "SCSS", color: "bg-pink-100 text-pink-800" },
-      ],
+      technologies: ["React", "TypeScript", "Vite", "Tailwind", "SCSS"],
       link: "https://github.com/JorgeDelgadillo/jd-portfolio",
     },
     {
       id: "2",
       title: "LazyWhats",
       description:
-        "A WhatsApp Terminal User Interface (TUI) client with Vim-style keybindings. Features QR code authentication, real-time messaging, and smart notifications—all from your terminal.",
+        "A WhatsApp terminal UI with Vim-style keybindings — QR authentication, real-time messaging, and smart notifications, all from the terminal.",
       image: "/lazywhats.png",
-      technologies: [
-        { name: "TypeScript", color: "bg-purple-100 text-purple-800" },
-        { name: "Node.js", color: "bg-green-100 text-green-800" },
-        { name: "Docker", color: "bg-cyan-100 text-cyan-800" },
-        { name: "Blessed", color: "bg-indigo-100 text-indigo-800" },
-      ],
+      technologies: ["TypeScript", "Node.js", "Docker", "Blessed"],
       link: "https://github.com/JorgeDelgadillo/lazywhats",
     },
   ];
 
-  const cards = Array.from({ length: 3 }, (_, index) => {
-    const project = projects[index];
-    return { project, index };
-  });
+  const sectionText = darkMode ? "text-cream" : "text-ink";
+  const bodyText = darkMode ? "text-cream-soft" : "text-ink-soft";
+  const mutedText = darkMode ? "text-cream-muted" : "text-ink-muted";
+  const accent = darkMode ? "text-gold" : "text-sepia";
+  const hairline = darkMode ? "border-hairline-dark" : "border-hairline";
 
   return (
     <section
       id="projects"
-      className={`py-20 px-6 ${
-        darkMode ? "bg-slate-900 text-white" : "bg-gray-50 text-gray-900"
-      }`}
+      className={`py-32 md:py-40 px-6 ${darkMode ? "bg-espresso-surface" : "bg-parchment-light"} transition-colors duration-500`}
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Featured Projects
-          </h2>
-          <p
-            className={`text-lg max-w-2xl mx-auto ${
-              darkMode ? "text-gray-300" : "text-gray-600"
-            }`}
-          >
-            A showcase of my best work and the technologies I've used to bring
-            ideas to life.
+      <div className="max-w-5xl mx-auto">
+        {/* Section header */}
+        <div className="mb-20 md:mb-24">
+          <p className={`text-[12px] uppercase tracking-[0.32em] mb-5 ${mutedText}`}>
+            03 — Projects
+          </p>
+          <h2 className={`font-serif font-light text-4xl md:text-5xl tracking-[-0.02em] ${sectionText}`}>
+            A few things
             <br />
-            <span className="block mt-2 font-medium">
-              I will continue adding more projects as I build and grow!
-            </span>
+            <span className={`italic ${accent}`}>I've made.</span>
+          </h2>
+          <p className={`mt-8 text-base md:text-lg font-light max-w-xl ${bodyText}`}>
+            A small, growing collection. More will appear here as I keep
+            building.
           </p>
         </div>
 
-        <div className="flex flex-col items-center justify-center py-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
-            {cards.map(({ project, index }) =>
-              project ? (
-                <div
-                  key={project.id}
-                  className={`p-6 rounded-lg border-2 hover:border-blue-500 transition-colors ${
-                    darkMode
-                      ? "border-slate-600 bg-slate-800/30"
-                      : "border-gray-300 bg-gray-100/50"
-                  }`}
-                >
-                  <div
-                    className={`w-full h-48 rounded-lg mb-4 overflow-hidden ${
-                      darkMode ? "bg-slate-700" : "bg-gray-200"
-                    }`}
-                  >
-                    <img
-                      src={project.image}
-                      alt={`Screenshot of ${project.title}`}
-                      className="w-full h-full object-cover rounded-md"
-                    />
-                  </div>
-                  <h4 className="text-xl font-bold mb-2">{project.title}</h4>
-                  <p
-                    className={`mb-2 ${darkMode ? "text-gray-300" : "text-gray-700"}`}
-                  >
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech.name}
-                        className={`px-2 py-1 rounded ${tech.color} text-xs font-semibold`}
-                      >
-                        {tech.name}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline font-medium"
-                  >
-                    View Source
-                  </a>
-                </div>
-              ) : (
-                <div
-                  key={`placeholder-${index}`}
-                  className={`p-6 rounded-lg border-2 border-dashed hover:border-blue-500 transition-colors ${
-                    darkMode
-                      ? "border-slate-600 bg-slate-800/30"
-                      : "border-gray-300 bg-gray-100/50"
-                  }`}
-                >
-                  <div
-                    className={`w-full h-48 rounded-lg mb-4 flex items-center justify-center ${
-                      darkMode ? "bg-slate-700" : "bg-gray-200"
-                    }`}
-                  >
-                    <svg
-                      className={`w-12 h-12 ${darkMode ? "text-slate-600" : "text-gray-400"}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </div>
-                  <div className="space-y-3">
-                    <div
-                      className={`h-4 rounded animate-pulse ${
-                        darkMode ? "bg-slate-700" : "bg-gray-300"
-                      }`}
-                    ></div>
-                    <div
-                      className={`h-3 w-3/4 rounded animate-pulse ${
-                        darkMode ? "bg-slate-700" : "bg-gray-300"
-                      }`}
-                    ></div>
-                    <div
-                      className={`h-3 w-1/2 rounded animate-pulse ${
-                        darkMode ? "bg-slate-700" : "bg-gray-300"
-                      }`}
-                    ></div>
-                  </div>
-                </div>
-              ),
-            )}
-          </div>
+        {/* Grid */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-px overflow-hidden rounded-2xl border ${hairline}`}>
+          {projects.map((project) => (
+            <a
+              key={project.id}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group block p-8 md:p-10 transition-colors duration-500 ${darkMode ? "bg-espresso hover:bg-espresso-elevated" : "bg-parchment hover:bg-parchment-dark"}`}
+            >
+              {/* Image */}
+              <div className={`aspect-[16/10] rounded-xl overflow-hidden mb-8 border ${hairline}`}>
+                <img
+                  src={project.image}
+                  alt={`Screenshot of ${project.title}`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  style={{ filter: darkMode ? "saturate(0.85)" : "sepia(0.08) saturate(0.95)" }}
+                />
+              </div>
+
+              {/* Title */}
+              <h3 className={`font-serif text-2xl md:text-3xl font-light tracking-[-0.01em] ${sectionText}`}>
+                {project.title}
+              </h3>
+
+              {/* Description */}
+              <p className={`mt-4 text-[15px] md:text-base font-light leading-relaxed ${bodyText}`}>
+                {project.description}
+              </p>
+
+              {/* Stack */}
+              <p className={`mt-6 text-[13px] ${mutedText}`}>
+                {project.technologies.join(" · ")}
+              </p>
+
+              {/* Link */}
+              <p className={`mt-8 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] font-medium transition-colors duration-300 ${accent} ${darkMode ? "group-hover:text-cream" : "group-hover:text-ink"}`}>
+                View source
+                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                  &rarr;
+                </span>
+              </p>
+            </a>
+          ))}
         </div>
       </div>
     </section>

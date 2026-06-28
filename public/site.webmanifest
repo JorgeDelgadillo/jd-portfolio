@@ -1,11 +1,12 @@
 {
 	"name": "Jorge Delgadillo — Portfolio",
-	"short_name": "JD Portfolio",
+	"short_name": "Jorge Delgadillo",
+	"description": "Portfolio of Jorge Delgadillo, Fullstack Software Engineer (React, TypeScript, Python, AWS).",
 	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",
-	"background_color": "#0b1120",
-	"theme_color": "#0b1120",
+	"background_color": "#f4ede0",
+	"theme_color": "#f4ede0",
 	"lang": "en",
 	"icons": [
 		{
