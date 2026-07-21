@@ -6,6 +6,22 @@ const Experience = () => {
   const experiences = [
     {
       id: 0,
+      company: "Heron Intelligence",
+      position: "Software Engineer",
+      period: "Feb 2026 — Jul 2026",
+      location: "Mexico · Remote",
+      description:
+        "Owned the end-to-end delivery of high-impact projects while building AI agent capabilities, modernizing legacy systems, and optimizing scalable data infrastructure.",
+      technologies: ["React", "TypeScript", "TypeORM", "PostgreSQL", "RAG", "AI Agents"],
+      achievements: [
+        "Acted as the primary owner for multiple high-impact projects, managing full-cycle delivery from initial architecture through production deployment.",
+        "Designed and implemented tools, skills, and RAG architectures to enhance internal AI agent capabilities, improving response accuracy and reliability.",
+        "Led full-stack refactoring initiatives on legacy systems, migrating older components to modern structures using React, TypeScript, and TypeORM.",
+        "Designed and maintained scalable PostgreSQL schemas and queries, ensuring strong performance and data integrity across application modules.",
+      ],
+    },
+    {
+      id: 1,
       company: "Freelance",
       position: "Software Engineer",
       period: "Jun 2025 — Present",
@@ -22,7 +38,7 @@ const Experience = () => {
       ],
     },
     {
-      id: 1,
+      id: 2,
       company: "Instawork",
       position: "Software Engineer",
       period: "Dec 2021 — May 2025",
@@ -40,7 +56,7 @@ const Experience = () => {
       ],
     },
     {
-      id: 2,
+      id: 3,
       company: "Stateoftheart.ai",
       position: "Fullstack Developer",
       period: "Aug 2020 — Nov 2021",
@@ -55,7 +71,7 @@ const Experience = () => {
       ],
     },
     {
-      id: 3,
+      id: 4,
       company: "Corebooks",
       position: "Software Developer",
       period: "Jan 2019 — Jun 2020",
