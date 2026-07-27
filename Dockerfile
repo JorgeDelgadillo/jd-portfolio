@@ -28,5 +28,5 @@ FROM nginx:stable-alpine AS production
 ARG VITE_GA_ID
 ENV VITE_GA_ID="${VITE_GA_ID}"
 COPY --from=build /app/dist /usr/share/nginx/html
-EXPOSE 80
+EXPOSE 90
 CMD ["nginx", "-g", "daemon off;"]
