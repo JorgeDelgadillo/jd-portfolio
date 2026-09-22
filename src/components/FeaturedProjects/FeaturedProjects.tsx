@@ -24,6 +24,24 @@ const FeaturedProjects = () => {
     },
     {
       id: "2",
+      title: "Translatly",
+      description:
+        "Privacy-first translation that runs neural models locally — text never leaves your device.",
+      image: "/translatly.png",
+      technologies: ["TypeScript", "Svelte", "WXT", "ONNX", "Transformers.js"],
+      link: "https://github.com/JorgeDelgadillo/translatly",
+    },
+    {
+      id: "3",
+      title: "Relaxy",
+      description:
+        "An Omarchy bar widget for mixing ambient sounds — Blanket-style nature, travel, interiors, and noise with presets and MPRIS controls.",
+      image: "/omarchy-relaxy.png",
+      technologies: ["QML", "GJS", "GStreamer", "Omarchy"],
+      link: "https://github.com/JorgeDelgadillo/omarchy-relaxy",
+    },
+    {
+      id: "4",
       title: "LazyWhats",
       description:
         "A WhatsApp terminal UI with Vim-style keybindings — QR authentication, real-time messaging, and smart notifications, all from the terminal.",
